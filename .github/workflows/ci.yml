@@ -99,7 +99,7 @@ jobs:
             }
           }
       - name: Upload executable, installer, deterministic ZIP, manifest, and SHA-256
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: civ5-civilization-studio-windows
           path: |
