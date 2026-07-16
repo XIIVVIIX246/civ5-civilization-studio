@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "civ5-civilization-studio"
+version = "0.4.1"
+description = "A guided Windows desktop builder for Civilization V: Brave New World custom civilizations"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "Pillow>=12.0",
+  "PySide6>=6.8,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "luaparser>=4.0,<5.0",
+  "PyInstaller>=6.0",
+]
+
+[project.gui-scripts]
+civ5-civilization-studio = "civ5studio.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+civ5studio = [
+  "data/**/*.json",
+  "data/**/*.xml",
+  "resources/**/*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
+

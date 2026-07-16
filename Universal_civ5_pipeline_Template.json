@@ -1,0 +1,207 @@
+{
+  "_about": [
+    "Example config for universal_civ5_pipeline.py — the ART / DDS stage of a Civ V",
+    "Brave New World custom-civ build. This script builds the icon atlases, alpha/team",
+    "icons, unit flags, Dawn of Man image, map image, and leader scene, then writes the",
+    "IconTextureAtlas XML, a DDS manifest, a QA report, and per-asset previews.",
+    "",
+    "It does NOT generate Civilization.sql / Leader.sql / Trait.sql / Text.sql / Colors.sql",
+    "/ the .modinfo, etc. Those gameplay tables belong to the separate SQL/text/.modinfo",
+    "stage of the builder. The full intended civ is documented (for that stage) under the",
+    "_civ_design_reference key below, which this art pipeline ignores.",
+    "",
+    "JSON has no comment syntax, so all explanatory text lives in _-prefixed keys that the",
+    "pipeline does not read.",
+    "",
+    "Paths are relative to the directory you run the script from. Put your source PNGs at the",
+    "listed Input/ paths (filenames must NOT carry trailing numeric suffixes like _1 or _256).",
+    "",
+    "Run:",
+    "  python universal_civ5_pipeline.py --config LITHUANIA_CUSTOM.dds.json --check-only",
+    "  python universal_civ5_pipeline.py --config LITHUANIA_CUSTOM.dds.json",
+    "",
+    "Atlas layout produced by this build (fixed in code, not set here):",
+    "  Normal icon atlas: 4x4 grid (16 cells); sizes 256,128,80,64,45,32 (256 atlas = 1024x1024).",
+    "  Unit flag atlas:   8x8 grid, 32px cells (256x256).",
+    "  Leader scene:      1024x768 (civ5_leader_scene_4x3) or 1280x720 (civ5_leader_scene_16x9).",
+    "  Dawn of Man:       1024x768.",
+    "The IconTextureAtlas XML it emits already matches this 4x4 / 16-cell layout."
+  ],
+
+  "_source_art_naming": [
+    "Civilization icon   -> civ_icon",
+    "Civilization alpha  -> alpha_icon   (white-on-black glyph; kept strictly at 0.78)",
+    "Leader icon         -> leader_icon  (portrait occupancy 0.85)",
+    "Unique unit icon    -> units[].source        (standard icon, occupancy 0.82)",
+    "Unique unit flag    -> flags[].source         (white silhouette, 24x24 box in 32px cell = 0.75)",
+    "Unique building icon -> buildings[].source    (standard icon, occupancy 0.82)",
+    "Leader scene        -> leader_scene",
+    "Dawn of Man image   -> dawn_image",
+    "Map image           -> map_image"
+  ],
+
+  "prefix": "LITHUANIA_CUSTOM",
+  "output_dir": "Output/LITHUANIA_CUSTOM",
+  "preset": "no-mod-integration",
+
+  "icon_fit_policy": "auto",
+  "_icon_fit_policy_note": "auto = cover full-bleed/disc/photo art to fill the circle, contain glyph art at vanilla occupancy. Use 'contain' to force strict occupancy for everything, 'cover' to always fill.",
+
+  "default_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+  "write_per_asset_previews": true,
+
+  "civ_icon": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_CivilizationIcon.png",
+  "leader_icon": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_LeaderIcon.png",
+  "alpha_icon": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_AlphaIcon.png",
+
+  "units": [
+    {
+      "label": "Bajoras",
+      "source": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_BajorasIcon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_BAJORAS_LITHUANIA_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+
+  "buildings": [
+    {
+      "label": "Hillfort",
+      "source": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_HillfortIcon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_HILLFORT_LITHUANIA_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+
+  "supports": [],
+
+  "flags": [
+    {
+      "label": "BajorasFlag",
+      "source": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_BajorasFlag.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_BAJORAS_LITHUANIA_CUSTOM",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+
+  "leader_scene": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_LeaderScene.png",
+  "map_image": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_Map.png",
+  "dawn_image": "Input/LITHUANIA_CUSTOM/LITHUANIA_CUSTOM_DOM.png",
+
+  "_civ_design_reference": {
+    "_note": [
+      "NOT read by the art pipeline. This documents the full civ requested in the original",
+      "spec so the SQL/text/.modinfo stage of the builder can consume it. All names are",
+      "placeholders and all replacement targets / type names MUST be validated against the",
+      "vanilla BNW reference database before generating SQL. Any trait/unit/building effect",
+      "that cannot be mapped to a verified table/column belongs in UNIMPLEMENTED_EFFECTS.md."
+    ],
+
+    "internal_prefix": "LITHUANIA_CUSTOM",
+
+    "mod": {
+      "name": "Kingdom of Lithuania (Custom)",
+      "guid_placeholder": "REPLACE-WITH-A-FRESH-GUID-0000-000000000000",
+      "version": 1,
+      "authors": "Your Name Here",
+      "teaser": "Adds the Kingdom of Lithuania under Vytautas.",
+      "description": "A custom Brave New World civilization: the Kingdom of Lithuania, led by Vytautas, with the Grand Duchy trait, the Bajoras unique unit, and the Hillfort unique building.",
+      "affects_saved_games": true
+    },
+
+    "civilization": {
+      "type": "CIVILIZATION_LITHUANIA_CUSTOM",
+      "short_description_text": "Lithuania",
+      "description_text": "Kingdom of Lithuania",
+      "adjective_text": "Lithuanian",
+      "region_inspiration_for_city_name_generator": "Baltic / Lithuanian",
+      "starting_bias_note": "Set CivilizationType start bias only if supported by the verified DB schema."
+    },
+
+    "leader": {
+      "type": "LEADER_VYTAUTAS_LITHUANIA_CUSTOM",
+      "name_text": "Vytautas",
+      "flavors_placeholder": {
+        "FLAVOR_OFFENSE": 6,
+        "FLAVOR_DEFENSE": 6,
+        "FLAVOR_EXPANSION": 7,
+        "FLAVOR_GROWTH": 5,
+        "FLAVOR_CULTURE": 5,
+        "FLAVOR_DIPLOMACY": 6
+      },
+      "_flavor_note": "Use only FlavorTypes that exist in the vanilla DB. Values are placeholders 1-10."
+    },
+
+    "trait": {
+      "type": "TRAIT_GRAND_DUCHY_LITHUANIA_CUSTOM",
+      "short_description_text": "Grand Duchy",
+      "description_text": "PLACEHOLDER trait effect — describe in plain language, then map to verified Trait columns or mark Lua-required.",
+      "candidate_effects": [
+        {
+          "description": "Placeholder: bonus to mounted/cavalry units.",
+          "mapping_status": "VERIFY — confirm against the Traits table columns before implementing; otherwise UNIMPLEMENTED_EFFECTS.md."
+        }
+      ]
+    },
+
+    "unique_units": [
+      {
+        "type": "UNIT_BAJORAS_LITHUANIA_CUSTOM",
+        "name_text": "Bajoras",
+        "art_label_in_this_config": "Bajoras",
+        "replaces_unit_placeholder": "UNIT_KNIGHT",
+        "_replacement_note": "Confirm the exact UnitType and the UnitClass it belongs to in the vanilla DB; use Civilization_UnitClassOverrides as verified by reference examples.",
+        "overrides_placeholder": {
+          "Combat": 0,
+          "Cost": 0,
+          "MoveRate_note": "Leave 0 / omit to inherit the replaced unit's defaults; only override verified columns."
+        },
+        "free_promotions_placeholder": ["PROMOTION_VERIFY_EXISTS"],
+        "ai_types_placeholder": ["UNITAI_FAST_ATTACK"],
+        "flavors_placeholder": {"FLAVOR_OFFENSE": 7}
+      }
+    ],
+
+    "unique_buildings": [
+      {
+        "type": "BUILDING_HILLFORT_LITHUANIA_CUSTOM",
+        "name_text": "Hillfort",
+        "art_label_in_this_config": "Hillfort",
+        "replaces_building_placeholder": "BUILDING_WALLS",
+        "_replacement_note": "Confirm the BuildingType and its BuildingClass in the vanilla DB; use Civilization_BuildingClassOverrides as verified by reference examples.",
+        "yield_changes_placeholder": [
+          {"YieldType": "YIELD_CULTURE", "Yield": 0, "_note": "Placeholder; set verified yields only."}
+        ],
+        "flavors_placeholder": {"FLAVOR_DEFENSE": 7}
+      }
+    ],
+
+    "city_names": [
+      "Vilnius", "Kaunas", "Trakai", "Kernave", "Klaipeda", "Siauliai",
+      "Panevezys", "Alytus", "Marijampole", "Ukmerge", "Telsiai", "Utena",
+      "Kedainiai", "Taurage", "Mazeikiai", "Jonava"
+    ],
+    "_city_names_note": "16 placeholder names. Not asserted to be historically accurate; edit before use.",
+
+    "spy_names": [
+      "Mindaugas", "Algirdas", "Kestutis", "Birute", "Gediminas",
+      "Aldona", "Rimgaile", "Skirgaila", "Danute", "Sofija"
+    ],
+    "_spy_names_note": "10 placeholder names; edit before use.",
+
+    "colors": {
+      "player_color_type": "PLAYERCOLOR_LITHUANIA_CUSTOM",
+      "primary_color_type": "COLOR_PLAYER_LITHUANIA_CUSTOM_PRIMARY",
+      "secondary_color_type": "COLOR_PLAYER_LITHUANIA_CUSTOM_SECONDARY",
+      "_format_note": "Civ V Colors are stored as 0.0-1.0 RGBA floats in the Colors table. Values below are placeholders.",
+      "primary_rgba": [0.78, 0.10, 0.12, 1.0],
+      "secondary_rgba": [0.95, 0.85, 0.30, 1.0],
+      "text_color_type": "COLOR_PLAYER_LITHUANIA_CUSTOM_SECONDARY",
+      "icon_color_type": "COLOR_PLAYER_LITHUANIA_CUSTOM_PRIMARY"
+    }
+  }
+}

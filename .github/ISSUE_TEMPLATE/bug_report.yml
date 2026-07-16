@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible problem in Civilization Studio
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not upload private logs, projects, or copyrighted mod files without reviewing them first.
+  - type: input
+    id: version
+    attributes:
+      label: Studio version
+      placeholder: 0.4.1
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Where did it happen?
+      options:
+        - Application launch
+        - Project editing
+        - Artwork processing
+        - Validation
+        - Mod generation
+        - Installation
+        - Civilization V runtime
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Explain what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: "1. Open...\n2. Choose...\n3. Click..."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Remove usernames, personal paths, tokens, and unrelated mod content.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I checked for an existing issue.
+          required: true
+        - label: I understand that static validation is not an in-game test.
+          required: true

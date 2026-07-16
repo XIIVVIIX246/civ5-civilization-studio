@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest an improvement for civilization authors
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Modding problem
+      description: What is difficult or impossible for the user today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed experience
+      description: Describe what a beginner should see and do.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: BNW, IGE, and compatibility considerations
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched existing issues and the current documentation.
+          required: true

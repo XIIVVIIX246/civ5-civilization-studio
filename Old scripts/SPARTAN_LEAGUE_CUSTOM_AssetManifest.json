@@ -1,0 +1,1136 @@
+{
+  "prefix": "SPARTAN_LEAGUE_CUSTOM",
+  "generated_utc": "2026-06-08T13:03:23.402553+00:00",
+  "icon_category_profiles": {
+    "BUILDING_AND_WONDER_ICONS": {
+      "scale": 0.58,
+      "mask": true,
+      "format": "DXT5"
+    },
+    "UNIT_PORTRAIT_ICONS": {
+      "scale": 0.58,
+      "mask": true,
+      "format": "DXT5"
+    },
+    "PROMOTION_ICONS": {
+      "scale": 0.68,
+      "mask": true,
+      "format": "DXT5"
+    },
+    "LEADER_PORTRAIT_ICONS": {
+      "scale": 0.75,
+      "mask": true,
+      "format": "A8R8G8B8"
+    },
+    "UNIT_MAP_FLAGS": {
+      "scale": 0.78,
+      "mask": true,
+      "format": "A8R8G8B8"
+    },
+    "ALPHA_ICON_ATLAS": {
+      "scale": 0.62,
+      "mask": true,
+      "format": "DXT5"
+    },
+    "DAWN_OF_MAN_SCREEN": {
+      "scale": 1.0,
+      "mask": false,
+      "format": "DXT1_NOMIP"
+    },
+    "LEADER_2D_SCENE": {
+      "scale": 1.0,
+      "mask": false,
+      "format": "DXT1_MIP"
+    }
+  },
+  "role_to_category": {
+    "civ": "UNIT_PORTRAIT_ICONS",
+    "unit": "UNIT_PORTRAIT_ICONS",
+    "building": "BUILDING_AND_WONDER_ICONS",
+    "support": "PROMOTION_ICONS",
+    "promotion": "PROMOTION_ICONS",
+    "trait": "PROMOTION_ICONS",
+    "dummy": "PROMOTION_ICONS",
+    "leader": "LEADER_PORTRAIT_ICONS",
+    "unit_flag": "UNIT_MAP_FLAGS",
+    "alpha": "ALPHA_ICON_ATLAS",
+    "alpha_icon": "ALPHA_ICON_ATLAS",
+    "dawn_image": "DAWN_OF_MAN_SCREEN",
+    "leader_scene": "LEADER_2D_SCENE"
+  },
+  "standards": {
+    "normal_icon_atlas": "4x4 grid, sizes 256/128/80/64/45/32, DXT5/BC3 with alpha, no mipmaps; one combined atlas so the leader icon shares DXT5; subject contained at the per-category scale (0.58 unit/building, 0.68 promotion, 0.75 leader)",
+    "alpha_team_icons": "FLORENCE_ALPHA_ATLAS-style 1x1 atlas rows, white-on-transparent uncompressed A8R8G8B8 at 128/80/64/48/45/32/24",
+    "unit_flags": "8x8 256x256 atlas with 32px cells, uncompressed A8R8G8B8, silhouette at 0.78",
+    "large_images": "Dawn of Man DXT1 (no mipmaps), Leader 2D scene DXT1 (with mip chain); map 512x512 uncompressed A8R8G8B8"
+  },
+  "atlases": {
+    "normal": {
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "stem": "SPARTAN_LEAGUE_CUSTOM_IconAtlas",
+      "icons_per_row": 4,
+      "icons_per_column": 4
+    },
+    "unit_flags": {
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_UNIT_FLAG_ATLAS",
+      "files": [
+        "SPARTAN_LEAGUE_CUSTOM_UnitFlagAtlas_32.dds"
+      ],
+      "icons_per_row": 8,
+      "icons_per_column": 8
+    }
+  },
+  "normal_icons": [
+    {
+      "role": "civ",
+      "label": "Civilization",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/SpartanLeague_CivilizationIcon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 0,
+      "asset_type": "civ_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "leader",
+      "label": "Leader",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/Leonidas_LeaderIcon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 1,
+      "asset_type": "leader_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.75,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "unit",
+      "label": "HomoioiHoplite",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HomoioiHoplite_Icon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 2,
+      "asset_type": "unit_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.55,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "unit",
+      "label": "KrypteiaScout",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/KrypteiaScout_Icon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 3,
+      "asset_type": "unit_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "building",
+      "label": "HelotQuarter",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HelotQuarter_Icon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 4,
+      "asset_type": "building_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "building",
+      "label": "SpartanAgogeAssembly",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/SpartanAgogeAssembly_Icon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 5,
+      "asset_type": "building_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "support",
+      "label": "GreatPhalanxDiscipline",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/GreatPhalanxDiscipline_PromotionIcon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 6,
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "support",
+      "label": "HelotWarLabor",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HelotWarLabor_PromotionIcon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 7,
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "support",
+      "label": "HomoioiShieldWall",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HomoioiShieldWall_PromotionIcon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 8,
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    },
+    {
+      "role": "support",
+      "label": "KrypteiaStealthExecution",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/KrypteiaStealthExecution_PromotionIcon.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+      "portrait_index": 9,
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "normalized_source_size": [
+        1024,
+        1024
+      ],
+      "final_target_size": [
+        256,
+        256
+      ],
+      "black_background_cleanup": false,
+      "circular_mask_baked": false,
+      "per_asset_previews": true
+    }
+  ],
+  "alpha_icons": {
+    "source": "Input/SPARTAN_LEAGUE_CUSTOM/SpartanLeague_AlphaIcon_black.png",
+    "files": [
+      "SPARTAN_LEAGUE_CUSTOM_Alpha_128.dds",
+      "SPARTAN_LEAGUE_CUSTOM_Alpha_80.dds",
+      "SPARTAN_LEAGUE_CUSTOM_Alpha_64.dds",
+      "SPARTAN_LEAGUE_CUSTOM_Alpha_48.dds",
+      "SPARTAN_LEAGUE_CUSTOM_Alpha_45.dds",
+      "SPARTAN_LEAGUE_CUSTOM_Alpha_32.dds",
+      "SPARTAN_LEAGUE_CUSTOM_Alpha_24.dds"
+    ],
+    "atlas": "SPARTAN_LEAGUE_CUSTOM_ALPHA_ATLAS",
+    "metrics": {
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "opaque_pct": 10.71,
+      "transparent_pct": 88.58,
+      "safe_margin_pct": 18.95,
+      "likely_full_bleed": false
+    },
+    "profile": "civ5_alpha_glyph_black_to_transparent",
+    "black_background_cleanup": true
+  },
+  "unit_flags": [
+    {
+      "label": "HomoioiHopliteFlag",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HomoioiHoplite_UnitFlag_black.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_UNIT_FLAG_ATLAS",
+      "unit_flag_icon_offset": 0,
+      "asset_type": "unit_flag",
+      "profile": "civ5_unit_flag_black_to_transparent",
+      "safe_subject_scale": 0.78,
+      "final_target_size": [
+        32,
+        32
+      ],
+      "black_background_cleanup": true
+    },
+    {
+      "label": "KrypteiaScoutFlag",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/KrypteiaScout_UnitFlag_black.png",
+      "atlas": "SPARTAN_LEAGUE_CUSTOM_UNIT_FLAG_ATLAS",
+      "unit_flag_icon_offset": 1,
+      "asset_type": "unit_flag",
+      "profile": "civ5_unit_flag_black_to_transparent",
+      "safe_subject_scale": 0.78,
+      "final_target_size": [
+        32,
+        32
+      ],
+      "black_background_cleanup": true
+    }
+  ],
+  "scenes": {
+    "dawn_of_man": "DawnOfMan_SpartanLeague.dds",
+    "map": "Map_SpartanLeague512.dds",
+    "leader_scene": "Leonidas_Scene.dds"
+  },
+  "warnings": [
+    "unit:HomoioiHoplite: #TYPE_NAME UNIT_HOMOIOI_HOPLITE_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "unit:KrypteiaScout: #TYPE_NAME UNIT_KRYPTEIA_SCOUT_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "building:HelotQuarter: #TYPE_NAME BUILDING_HELOT_QUARTER_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "building:SpartanAgogeAssembly: #TYPE_NAME BUILDING_SPARTAN_AGOGE_ASSEMBLY_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "support:GreatPhalanxDiscipline: #TYPE_NAME PROMOTION_GREAT_PHALANX_DISCIPLINE_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "support:HelotWarLabor: #TYPE_NAME PROMOTION_HELOT_WAR_LABOR_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "support:HomoioiShieldWall: #TYPE_NAME PROMOTION_HOMOIOI_SHIELD_WALL_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "support:KrypteiaStealthExecution: #TYPE_NAME PROMOTION_KRYPTEIA_STEALTH_EXECUTION_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+    "INFO: Medallion baking enabled for 10 normal icon atlas cell(s); alpha icons, unit flags, and large images are unchanged.",
+    "civ:SpartanLeague_CivilizationIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 79.6%).",
+    "INFO: civ:SpartanLeague_CivilizationIcon.png: fit=contain (subject covers ~58% of the circle).",
+    "civ:Civilization: medallion QA detected possible subject clipping by the circular mask.",
+    "civ:Civilization: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "leader:Leonidas_LeaderIcon.png: removed edge-connected white/gray source mat before icon fitting (21.5% of pixels).",
+    "INFO: leader:Leonidas_LeaderIcon.png: fit=contain (subject covers ~75% of the circle).",
+    "leader:Leader: medallion QA detected possible subject clipping by the circular mask.",
+    "leader:Leader: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "unit:HomoioiHoplite_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 78.6%).",
+    "INFO: unit:HomoioiHoplite_Icon.png: fit=contain (subject covers ~55% of the circle).",
+    "unit:HomoioiHoplite: medallion QA detected possible subject clipping by the circular mask.",
+    "unit:HomoioiHoplite: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "unit:KrypteiaScout_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 85.4%).",
+    "INFO: unit:KrypteiaScout_Icon.png: fit=contain (subject covers ~58% of the circle).",
+    "unit:KrypteiaScout: medallion QA detected possible subject clipping by the circular mask.",
+    "unit:KrypteiaScout: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "building:HelotQuarter_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 76.3%).",
+    "INFO: building:HelotQuarter_Icon.png: fit=contain (subject covers ~58% of the circle).",
+    "building:HelotQuarter: medallion QA detected possible subject clipping by the circular mask.",
+    "building:HelotQuarter: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "building:SpartanAgogeAssembly_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 83.0%).",
+    "INFO: building:SpartanAgogeAssembly_Icon.png: fit=contain (subject covers ~58% of the circle).",
+    "building:SpartanAgogeAssembly: medallion QA detected possible subject clipping by the circular mask.",
+    "building:SpartanAgogeAssembly: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "support:GreatPhalanxDiscipline_PromotionIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 86.8%).",
+    "INFO: support:GreatPhalanxDiscipline_PromotionIcon.png: fit=contain (subject covers ~68% of the circle).",
+    "support:GreatPhalanxDiscipline: medallion QA detected possible subject clipping by the circular mask.",
+    "support:GreatPhalanxDiscipline: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "INFO: support:HelotWarLabor_PromotionIcon.png: fit=contain (subject covers ~68% of the circle).",
+    "support:HelotWarLabor: medallion QA detected possible subject clipping by the circular mask.",
+    "support:HelotWarLabor: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "support:HomoioiShieldWall_PromotionIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 75.5%).",
+    "INFO: support:HomoioiShieldWall_PromotionIcon.png: fit=contain (subject covers ~68% of the circle).",
+    "support:HomoioiShieldWall: medallion QA detected possible subject clipping by the circular mask.",
+    "support:HomoioiShieldWall: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "support:KrypteiaStealthExecution_PromotionIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 88.1%).",
+    "INFO: support:KrypteiaStealthExecution_PromotionIcon.png: fit=contain (subject covers ~68% of the circle).",
+    "support:KrypteiaStealthExecution: medallion QA detected possible subject clipping by the circular mask.",
+    "support:KrypteiaStealthExecution: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+    "alpha SPARTAN_LEAGUE_CUSTOM_Alpha_45.dds: 45px is not a multiple of 4, so it was written as A8R8G8B8 instead of DXT5 (BC compression needs mult-of-4 dimensions; alpha is preserved).",
+    "unit_flag:HomoioiHopliteFlag: high edge/detail density at 32px; painted source suspected; use a hand-drawn simple white silhouette/glyph.",
+    "unit_flag:KrypteiaScoutFlag: high edge/detail density at 32px; painted source suspected; use a hand-drawn simple white silhouette/glyph."
+  ],
+  "warnings_by_severity": {
+    "fatal": [],
+    "strong": [],
+    "normal": [
+      "unit:HomoioiHoplite: #TYPE_NAME UNIT_HOMOIOI_HOPLITE_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "unit:KrypteiaScout: #TYPE_NAME UNIT_KRYPTEIA_SCOUT_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "building:HelotQuarter: #TYPE_NAME BUILDING_HELOT_QUARTER_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "building:SpartanAgogeAssembly: #TYPE_NAME BUILDING_SPARTAN_AGOGE_ASSEMBLY_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "support:GreatPhalanxDiscipline: #TYPE_NAME PROMOTION_GREAT_PHALANX_DISCIPLINE_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "support:HelotWarLabor: #TYPE_NAME PROMOTION_HELOT_WAR_LABOR_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "support:HomoioiShieldWall: #TYPE_NAME PROMOTION_HOMOIOI_SHIELD_WALL_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "support:KrypteiaStealthExecution: #TYPE_NAME PROMOTION_KRYPTEIA_STEALTH_EXECUTION_SPARTAN_LEAGUE_CUSTOM not found in existing usage; will assign a free index.",
+      "civ:SpartanLeague_CivilizationIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 79.6%).",
+      "civ:Civilization: medallion QA detected possible subject clipping by the circular mask.",
+      "civ:Civilization: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "leader:Leonidas_LeaderIcon.png: removed edge-connected white/gray source mat before icon fitting (21.5% of pixels).",
+      "leader:Leader: medallion QA detected possible subject clipping by the circular mask.",
+      "leader:Leader: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "unit:HomoioiHoplite_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 78.6%).",
+      "unit:HomoioiHoplite: medallion QA detected possible subject clipping by the circular mask.",
+      "unit:HomoioiHoplite: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "unit:KrypteiaScout_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 85.4%).",
+      "unit:KrypteiaScout: medallion QA detected possible subject clipping by the circular mask.",
+      "unit:KrypteiaScout: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "building:HelotQuarter_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 76.3%).",
+      "building:HelotQuarter: medallion QA detected possible subject clipping by the circular mask.",
+      "building:HelotQuarter: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "building:SpartanAgogeAssembly_Icon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 83.0%).",
+      "building:SpartanAgogeAssembly: medallion QA detected possible subject clipping by the circular mask.",
+      "building:SpartanAgogeAssembly: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "support:GreatPhalanxDiscipline_PromotionIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 86.8%).",
+      "support:GreatPhalanxDiscipline: medallion QA detected possible subject clipping by the circular mask.",
+      "support:GreatPhalanxDiscipline: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "support:HelotWarLabor: medallion QA detected possible subject clipping by the circular mask.",
+      "support:HelotWarLabor: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "support:HomoioiShieldWall_PromotionIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 75.5%).",
+      "support:HomoioiShieldWall: medallion QA detected possible subject clipping by the circular mask.",
+      "support:HomoioiShieldWall: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "support:KrypteiaStealthExecution_PromotionIcon.png: removed black corner matte with safe ellipse mask (21.8% of pixels; edge-dark 88.1%).",
+      "support:KrypteiaStealthExecution: medallion QA detected possible subject clipping by the circular mask.",
+      "support:KrypteiaStealthExecution: subject fills too much of the medallion circle; consider lowering medallion_fill_percent or adding source padding.",
+      "alpha SPARTAN_LEAGUE_CUSTOM_Alpha_45.dds: 45px is not a multiple of 4, so it was written as A8R8G8B8 instead of DXT5 (BC compression needs mult-of-4 dimensions; alpha is preserved).",
+      "unit_flag:HomoioiHopliteFlag: high edge/detail density at 32px; painted source suspected; use a hand-drawn simple white silhouette/glyph.",
+      "unit_flag:KrypteiaScoutFlag: high edge/detail density at 32px; painted source suspected; use a hand-drawn simple white silhouette/glyph."
+    ],
+    "info": [
+      "INFO: Medallion baking enabled for 10 normal icon atlas cell(s); alpha icons, unit flags, and large images are unchanged.",
+      "INFO: civ:SpartanLeague_CivilizationIcon.png: fit=contain (subject covers ~58% of the circle).",
+      "INFO: leader:Leonidas_LeaderIcon.png: fit=contain (subject covers ~75% of the circle).",
+      "INFO: unit:HomoioiHoplite_Icon.png: fit=contain (subject covers ~55% of the circle).",
+      "INFO: unit:KrypteiaScout_Icon.png: fit=contain (subject covers ~58% of the circle).",
+      "INFO: building:HelotQuarter_Icon.png: fit=contain (subject covers ~58% of the circle).",
+      "INFO: building:SpartanAgogeAssembly_Icon.png: fit=contain (subject covers ~58% of the circle).",
+      "INFO: support:GreatPhalanxDiscipline_PromotionIcon.png: fit=contain (subject covers ~68% of the circle).",
+      "INFO: support:HelotWarLabor_PromotionIcon.png: fit=contain (subject covers ~68% of the circle).",
+      "INFO: support:HomoioiShieldWall_PromotionIcon.png: fit=contain (subject covers ~68% of the circle).",
+      "INFO: support:KrypteiaStealthExecution_PromotionIcon.png: fit=contain (subject covers ~68% of the circle)."
+    ]
+  },
+  "dds_validation": [
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_IconAtlas_256.dds",
+      "metrics": {
+        "width": 1024,
+        "height": 1024,
+        "pitch": 4108,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_IconAtlas_128.dds",
+      "metrics": {
+        "width": 512,
+        "height": 512,
+        "pitch": 2060,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_IconAtlas_80.dds",
+      "metrics": {
+        "width": 320,
+        "height": 320,
+        "pitch": 1292,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_IconAtlas_64.dds",
+      "metrics": {
+        "width": 256,
+        "height": 256,
+        "pitch": 1036,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_IconAtlas_45.dds",
+      "metrics": {
+        "width": 180,
+        "height": 180,
+        "pitch": 732,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_IconAtlas_32.dds",
+      "metrics": {
+        "width": 128,
+        "height": 128,
+        "pitch": 524,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_Alpha_128.dds",
+      "metrics": {
+        "width": 128,
+        "height": 128,
+        "pitch": 524,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_Alpha_80.dds",
+      "metrics": {
+        "width": 80,
+        "height": 80,
+        "pitch": 332,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_Alpha_64.dds",
+      "metrics": {
+        "width": 64,
+        "height": 64,
+        "pitch": 268,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_Alpha_48.dds",
+      "metrics": {
+        "width": 48,
+        "height": 48,
+        "pitch": 204,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_Alpha_45.dds",
+      "metrics": {
+        "width": 45,
+        "height": 45,
+        "pitch": 180,
+        "mipmaps": 1,
+        "pf_flags": 65,
+        "fourcc": 0,
+        "bpp": 32,
+        "alpha_mask": 4278190080,
+        "expected_format": "A8R8G8B8",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_Alpha_32.dds",
+      "metrics": {
+        "width": 32,
+        "height": 32,
+        "pitch": 140,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_Alpha_24.dds",
+      "metrics": {
+        "width": 24,
+        "height": 24,
+        "pitch": 108,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 894720068,
+        "bpp": 32,
+        "alpha_mask": 0,
+        "expected_format": "DXT5",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "SPARTAN_LEAGUE_CUSTOM_UnitFlagAtlas_32.dds",
+      "metrics": {
+        "width": 256,
+        "height": 256,
+        "pitch": 1024,
+        "mipmaps": 1,
+        "pf_flags": 65,
+        "fourcc": 0,
+        "bpp": 32,
+        "alpha_mask": 4278190080,
+        "expected_format": "A8R8G8B8",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "DawnOfMan_SpartanLeague.dds",
+      "metrics": {
+        "width": 1024,
+        "height": 768,
+        "pitch": 4108,
+        "mipmaps": 0,
+        "pf_flags": 4,
+        "fourcc": 827611204,
+        "bpp": 24,
+        "alpha_mask": 0,
+        "expected_format": "DXT1_NOMIP",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "Map_SpartanLeague512.dds",
+      "metrics": {
+        "width": 512,
+        "height": 512,
+        "pitch": 2048,
+        "mipmaps": 1,
+        "pf_flags": 65,
+        "fourcc": 0,
+        "bpp": 32,
+        "alpha_mask": 4278190080,
+        "expected_format": "A8R8G8B8",
+        "exists": true
+      },
+      "warnings": []
+    },
+    {
+      "name": "Leonidas_Scene.dds",
+      "metrics": {
+        "width": 1280,
+        "height": 720,
+        "pitch": 5132,
+        "mipmaps": 11,
+        "pf_flags": 4,
+        "fourcc": 827611204,
+        "bpp": 24,
+        "alpha_mask": 0,
+        "expected_format": "DXT1_MIP",
+        "exists": true
+      },
+      "warnings": []
+    }
+  ],
+  "post_import_reminder": "Clear the Civ V cache after art or SQL/XML changes.",
+  "normal_alpha_metrics": [
+    {
+      "role": "civ",
+      "label": "Civilization",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.58,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.58,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 26.21,
+        "transparent_pct": 73.52,
+        "safe_margin_pct": 21.0,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "leader",
+      "label": "Leader",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.75,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.75,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.75,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 43.85,
+        "transparent_pct": 55.75,
+        "safe_margin_pct": 12.5,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "unit",
+      "label": "HomoioiHoplite",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.55,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.55,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.55,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 23.54,
+        "transparent_pct": 76.21,
+        "safe_margin_pct": 22.46,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.938,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "unit",
+      "label": "KrypteiaScout",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.58,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.58,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 26.21,
+        "transparent_pct": 73.52,
+        "safe_margin_pct": 21.0,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "building",
+      "label": "HelotQuarter",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.58,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.58,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 26.21,
+        "transparent_pct": 73.52,
+        "safe_margin_pct": 21.0,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "building",
+      "label": "SpartanAgogeAssembly",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.58,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.58,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.58,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 26.21,
+        "transparent_pct": 73.52,
+        "safe_margin_pct": 21.0,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "support",
+      "label": "GreatPhalanxDiscipline",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.68,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.68,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 36.03,
+        "transparent_pct": 63.66,
+        "safe_margin_pct": 16.02,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "support",
+      "label": "HelotWarLabor",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.68,
+        "opaque_fraction": 1.0,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.68,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 46.2,
+        "transparent_pct": 53.8,
+        "safe_margin_pct": 16.02,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.7
+        }
+      }
+    },
+    {
+      "role": "support",
+      "label": "HomoioiShieldWall",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.68,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.68,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 36.03,
+        "transparent_pct": 63.66,
+        "safe_margin_pct": 16.02,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    },
+    {
+      "role": "support",
+      "label": "KrypteiaStealthExecution",
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.68,
+      "fit": {
+        "fit_mode": "contain",
+        "fit_policy": "contain",
+        "occupancy_target": 0.68,
+        "opaque_fraction": 0.785,
+        "aspect": 1.0,
+        "squareish": true,
+        "full_bleed_source": true,
+        "circle_fill_estimate": 0.68,
+        "cover_cropped_opaque": false
+      },
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 36.03,
+        "transparent_pct": 63.66,
+        "safe_margin_pct": 16.02,
+        "likely_full_bleed": false,
+        "medallion": {
+          "subject_clipped_by_circle": true,
+          "subject_fill_ratio": 0.934,
+          "fills_too_much_circle": true,
+          "potentially_unreadable_at_32px": false,
+          "visible_coverage_32_pct": 70.12
+        }
+      }
+    }
+  ],
+  "unit_flag_alpha_metrics": [
+    {
+      "label": "HomoioiHopliteFlag",
+      "skipped": false,
+      "profile": "civ5_unit_flag_black_to_transparent",
+      "black_bg_cleanup": true,
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 8.59,
+        "transparent_pct": 71.09,
+        "safe_margin_pct": 9.38,
+        "likely_full_bleed": false,
+        "source_assessment": {
+          "alpha_min": 255,
+          "alpha_max": 255,
+          "opaque_pct": 100.0,
+          "coverage_pct": 100.0,
+          "edge_ratio_pct": 0.32,
+          "distinct_colors_32": 173,
+          "edge_touching": true,
+          "painted": true,
+          "reasons": [
+            "source is fully opaque (no transparent background)",
+            "visible coverage 100% is too high for a glyph",
+            "subject touches the image border (full-bleed)"
+          ]
+        },
+        "painted_resolved_by_cleanup": true
+      }
+    },
+    {
+      "label": "KrypteiaScoutFlag",
+      "skipped": false,
+      "profile": "civ5_unit_flag_black_to_transparent",
+      "black_bg_cleanup": true,
+      "metrics": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "opaque_pct": 8.89,
+        "transparent_pct": 62.11,
+        "safe_margin_pct": 9.38,
+        "likely_full_bleed": false,
+        "source_assessment": {
+          "alpha_min": 255,
+          "alpha_max": 255,
+          "opaque_pct": 100.0,
+          "coverage_pct": 100.0,
+          "edge_ratio_pct": 0.32,
+          "distinct_colors_32": 184,
+          "edge_touching": true,
+          "painted": true,
+          "reasons": [
+            "source is fully opaque (no transparent background)",
+            "visible coverage 100% is too high for a glyph",
+            "subject touches the image border (full-bleed)"
+          ]
+        },
+        "painted_resolved_by_cleanup": true
+      }
+    }
+  ],
+  "planned_replacements": [],
+  "medallions": {
+    "enabled": true,
+    "preview_only": false,
+    "radius_percent": 0.46,
+    "fill_percent": 0.94,
+    "rim_enabled": true,
+    "rim_style": "gold",
+    "rim_width_percent": 0.03,
+    "background": "transparent",
+    "applies_to": "normal icon atlas cells only"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "prefix": "Mississippian",
+  "input_dir": "C:/Repos/PNGtoDDSConverter/Input/Mississippian",
+  "output_dir": "C:/Repos/PNGtoDDSConverter/Output/Mississippian",
+  "mod_data_dir": "C:/Users/ExampleUser/Documents/My Games/Sid Meier's Civilization 5/MODS/Mississippian_BNW_Custom_Civ",
+  "preset": "existing-combined-atlas",
+  "civ_icon": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/Mississippian_CivilizationIcon.png",
+  "leader_icon": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/GreatSun_LeaderIcon.png",
+  "alpha_icon": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/Mississippian_AlphaIcon_black.png",
+  "units": [
+    {
+      "label": "ChunkeyWarrior",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/ChunkeyWarrior_Icon.png",
+      "type_name": "UNIT_MISSISSIPPIAN_CHUNKEY_WARRIOR",
+      "asset_type": "unit_icon",
+      "profile": "civ5_circular_icon",
+      "portrait_index": 2
+    },
+    {
+      "label": "RiverRaider",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/RiverRaider_Icon.png",
+      "type_name": "UNIT_MISSISSIPPIAN_RIVER_RAIDER",
+      "asset_type": "unit_icon",
+      "profile": "civ5_circular_icon",
+      "portrait_index": 3
+    }
+  ],
+  "buildings": [
+    {
+      "label": "PlatformMound",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/PlatformMound_Icon.png",
+      "type_name": "BUILDING_MISSISSIPPIAN_PLATFORM_MOUND",
+      "asset_type": "building_icon",
+      "profile": "civ5_circular_icon",
+      "portrait_index": 4
+    },
+    {
+      "label": "CahokiaPlaza",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/CahokiaPlaza_Icon.png",
+      "type_name": "BUILDING_MISSISSIPPIAN_CAHOKIA_PLAZA",
+      "asset_type": "building_icon",
+      "profile": "civ5_circular_icon",
+      "portrait_index": 5
+    }
+  ],
+  "supports": [
+    {
+      "label": "MoundsOfTheSun",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/MoundsOfTheSun_PromotionIcon.png",
+      "type_name": "PROMOTION_MISSISSIPPIAN_RIVER_MOVES",
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon",
+      "portrait_index": 6
+    },
+    {
+      "label": "ChunkeyDefense",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/ChunkeyDefense_PromotionIcon.png",
+      "type_name": "PROMOTION_MISSISSIPPIAN_CHUNKEY_DEFENSE",
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon",
+      "portrait_index": 7
+    },
+    {
+      "label": "RiverRaiderPromotion",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/RiverRaider_PromotionIcon.png",
+      "type_name": "PROMOTION_MISSISSIPPIAN_RIVER_RAIDER",
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon",
+      "portrait_index": 8
+    }
+  ],
+  "flags": [
+    {
+      "label": "ChunkeyWarrior",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/ChunkeyWarrior_UnitFlag_black.png",
+      "type_name": "UNIT_MISSISSIPPIAN_CHUNKEY_WARRIOR",
+      "asset_type": "unit_flag",
+      "profile": "civ5_unit_flag_black_to_transparent",
+      "portrait_index": 0
+    },
+    {
+      "label": "RiverRaider",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/RiverRaider_UnitFlag_black.png",
+      "type_name": "UNIT_MISSISSIPPIAN_RIVER_RAIDER",
+      "asset_type": "unit_flag",
+      "profile": "civ5_unit_flag_black_to_transparent",
+      "portrait_index": 1
+    }
+  ],
+  "map_image": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/Map_Mississippian512.png",
+  "dawn_image": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/DawnOfMan_Mississippian.png",
+  "leader_scene": "C:/Repos/PNGtoDDSConverter/Input/Mississippian/GreatSun_Scene.png",
+  "icon_atlas_name": "MISSISSIPPIAN_ICON_ATLAS",
+  "icon_atlas_stem": "Mississippian_IconAtlas",
+  "alpha_atlas_name": "MISSISSIPPIAN_ALPHA_ATLAS",
+  "flag_atlas_name": "MISSISSIPPIAN_UNIT_FLAG_ATLAS",
+  "flag_atlas_stem": "Mississippian_UnitFlagAtlas",
+  "map_output_name": "Map_Mississippian512.dds",
+  "dawn_output_name": "DawnOfMan_Mississippian.dds",
+  "leader_scene_output_name": "GreatSun_Scene.dds",
+  "default_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+  "write_per_asset_previews": true,
+  "bake_medallions": true,
+  "medallion_fill_percent": 0.94,
+  "medallion_radius_percent": 0.495,
+  "medallion_rim": true,
+  "medallion_rim_width_percent": 0.02,
+  "medallion_rim_style": "gold",
+  "medallion_background": "transparent",
+  "medallion_preview_only": false,
+  "bake_circular_mask": false,
+  "allow_painted_flags": false,
+  "allow_numeric_suffixes": false,
+  "copy_new_assets": false,
+  "update_modinfo_imports": false,
+  "dry_run": false,
+  "write_mod": false,
+  "_notes": [
+    "This config targets the max-fill test pipeline and the existing Mississippian atlas SQL.",
+    "Atlas order must remain: 0 civ, 1 leader, 2 Chunkey Warrior, 3 River Raider, 4 Platform Mound, 5 Cahokia Plaza, 6 shared Mounds/River Moves support, 7 Chunkey Defense, 8 River Raider promotion.",
+    "The alpha icon and unit flags are expected to be white glyphs on pure black PNG backgrounds; remove _black from the filenames here only if your actual source files use transparent glyph PNGs instead.",
+    "Run with --check-only first. Use --write-mod only after previewing the generated DDS/PNG previews."
+  ]
+}

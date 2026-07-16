@@ -1,0 +1,148 @@
+{
+  "project_format": "civ5studio.project",
+  "schema_version": 2,
+  "project_id": "0db02df2-d6a2-44ce-af72-aeb2b6faeef8",
+  "mod_id": "34a4b891-d6c5-4fb3-9732-df0a89001ae2",
+  "mod_name": "Kingdom of Lithuania",
+  "mod_version": 1,
+  "authors": "Civilization Studio Sample",
+  "teaser": "Adds Lithuania led by Vytautas the Great.",
+  "description": "A complete Civilization V: Brave New World sample project for Lithuania.",
+  "internal_prefix": "LITHUANIA_CUSTOM",
+  "civilization": {
+    "name": "Kingdom of Lithuania",
+    "short_name": "Lithuania",
+    "adjective": "Lithuanian",
+    "civilopedia": "The Grand Duchy of Lithuania was one of medieval Europe's largest states.",
+    "dawn_of_man_quote": "Welcome, Grand Duke Vytautas. From the Baltic to the Black Sea, your people look to you for strength and wisdom. Will Lithuania endure through the ages?",
+    "base_civilization": "CIVILIZATION_POLAND",
+    "copy_free_buildings_from": "CIVILIZATION_POLAND",
+    "copy_free_techs_and_units_from": "CIVILIZATION_ZULU",
+    "start_region_avoid": "REGION_TUNDRA",
+    "city_names": [
+      "Vilnius", "Kaunas", "Trakai", "Klaipeda", "Siauliai", "Panevezys",
+      "Alytus", "Marijampole", "Mazeikiai", "Jonava", "Utena", "Kedainiai"
+    ],
+    "spy_names": [
+      "Mindaugas", "Algirdas", "Gediminas", "Kestutis", "Jogaila", "Vytautas"
+    ]
+  },
+  "leader": {
+    "key": "VYTAUTAS",
+    "name": "Vytautas",
+    "civilopedia": "Vytautas the Great ruled Lithuania at the height of its medieval power.",
+    "victory_competitiveness": 6,
+    "wonder_competitiveness": 4,
+    "minor_civ_competitiveness": 6,
+    "boldness": 7,
+    "diplo_balance": 6,
+    "warmonger_hate": 4,
+    "denounce_willingness": 5,
+    "dof_willingness": 6,
+    "loyalty": 7,
+    "neediness": 4,
+    "forgiveness": 5,
+    "chattiness": 5,
+    "meanness": 4,
+    "flavors": {
+      "FLAVOR_OFFENSE": 7,
+      "FLAVOR_MOBILE": 8,
+      "FLAVOR_EXPANSION": 7,
+      "FLAVOR_DIPLOMACY": 6,
+      "FLAVOR_CULTURE": 5
+    },
+    "major_civ_approach_biases": {
+      "MAJOR_CIV_APPROACH_WAR": 6,
+      "MAJOR_CIV_APPROACH_FRIENDLY": 7,
+      "MAJOR_CIV_APPROACH_NEUTRAL": 7,
+      "MAJOR_CIV_APPROACH_DECEPTIVE": 4
+    },
+    "minor_civ_approach_biases": {
+      "MINOR_CIV_APPROACH_CONQUEST": 4,
+      "MINOR_CIV_APPROACH_PROTECTIVE": 6
+    },
+    "diplomacy_text": {
+      "RESPONSE_FIRST_GREETING": "I am Vytautas, Grand Duke of Lithuania. Let us speak plainly and build wisely."
+    }
+  },
+  "trait": {
+    "key": "GRAND_DUCHY",
+    "name": "Grand Duchy",
+    "short_description": "Grand Duchy",
+    "long_description": "Workers construct improvements 15 percent faster.",
+    "database_modifiers": {
+      "WorkerSpeedModifier": 15
+    },
+    "effects": []
+  },
+  "units": [
+    {
+      "key": "WINGED_HUSSAR",
+      "name": "Winged Hussar",
+      "help_text": "A powerful and mobile Lithuanian cavalry unit that replaces the Lancer.",
+      "strategy_text": "Use Winged Hussars to outflank enemies and exploit open terrain.",
+      "replaces_unit_class": "UNITCLASS_LANCER",
+      "base_unit": "UNIT_LANCER",
+      "combat": 38,
+      "ranged_combat": 0,
+      "moves": 5,
+      "cost": null,
+      "prereq_tech": "TECH_CHIVALRY",
+      "free_promotions": ["PROMOTION_CHARGE"],
+      "effects": []
+    }
+  ],
+  "buildings": [
+    {
+      "key": "HILL_FORT",
+      "name": "Hill Fort",
+      "help_text": "A Lithuanian stronghold that replaces the Castle and improves local production and trade.",
+      "strategy_text": "Build Hill Forts in border cities to strengthen defense and the local economy.",
+      "replaces_building_class": "BUILDINGCLASS_CASTLE",
+      "base_building": "BUILDING_CASTLE",
+      "cost": null,
+      "gold_maintenance": 0,
+      "defense": null,
+      "extra_city_hit_points": null,
+      "prereq_tech": "TECH_CHIVALRY",
+      "yield_changes": [
+        {"yield_type": "YIELD_PRODUCTION", "amount": 2},
+        {"yield_type": "YIELD_GOLD", "amount": 1}
+      ],
+      "domain_free_experience": [],
+      "effects": []
+    }
+  ],
+  "colors": {
+    "primary_red": 0.698,
+    "primary_green": 0.133,
+    "primary_blue": 0.133,
+    "primary_alpha": 1.0,
+    "secondary_red": 1.0,
+    "secondary_green": 0.843,
+    "secondary_blue": 0.0,
+    "secondary_alpha": 1.0
+  },
+  "art": {
+    "contract_version": "smp-civ5-v1",
+    "allow_placeholders": false,
+    "assets": [
+      {"asset_id": "civ_icon", "role": "civilization_icon", "source_png": "art_sources/Lithuania_Civilization.png", "subject_key": "civilization", "required": true, "crop_mode": "cover", "focal_x": 0.5, "focal_y": 0.5},
+      {"asset_id": "civ_alpha", "role": "civilization_alpha", "source_png": "art_sources/Lithuania_Alpha.png", "subject_key": "civilization", "required": true, "crop_mode": "contain", "focal_x": 0.5, "focal_y": 0.5},
+      {"asset_id": "leader_portrait", "role": "leader_portrait", "source_png": "art_sources/Vytautas_Portrait.png", "subject_key": "leader", "required": true, "crop_mode": "cover", "focal_x": 0.5, "focal_y": 0.4},
+      {"asset_id": "leader_scene", "role": "leader_scene", "source_png": "art_sources/Vytautas_Scene.png", "subject_key": "leader", "required": true, "crop_mode": "cover", "focal_x": 0.5, "focal_y": 0.5},
+      {"asset_id": "dawn_of_man", "role": "dawn_of_man", "source_png": "art_sources/Lithuania_DOM.png", "subject_key": "civilization", "required": true, "crop_mode": "cover", "focal_x": 0.5, "focal_y": 0.5},
+      {"asset_id": "map", "role": "map_image", "source_png": "art_sources/Lithuania_Map.png", "subject_key": "civilization", "required": true, "crop_mode": "contain", "focal_x": 0.5, "focal_y": 0.5},
+      {"asset_id": "winged_hussar_icon", "role": "unique_unit_icon", "source_png": "art_sources/Winged_Hussar_Icon.png", "subject_key": "unit:WINGED_HUSSAR", "required": true, "crop_mode": "cover", "focal_x": 0.5, "focal_y": 0.5},
+      {"asset_id": "winged_hussar_flag", "role": "unit_flag", "source_png": "art_sources/Winged_Hussar_Flag.png", "subject_key": "unit:WINGED_HUSSAR", "required": true, "crop_mode": "contain", "focal_x": 0.5, "focal_y": 0.5},
+      {"asset_id": "hill_fort_icon", "role": "unique_building_icon", "source_png": "art_sources/Hill_Fort_Icon.png", "subject_key": "building:HILL_FORT", "required": true, "crop_mode": "cover", "focal_x": 0.5, "focal_y": 0.5}
+    ]
+  },
+  "options": {
+    "affects_saved_games": false,
+    "supports_multiplayer": true,
+    "supports_hotseat": true,
+    "supports_mac": true
+  },
+  "extensions": {}
+}

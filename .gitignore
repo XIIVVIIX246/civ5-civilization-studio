@@ -1,0 +1,33 @@
+# Generated converter artifacts
+Output/
+/Build/
+Staging/
+dist/
+/build/
+*.spec
+
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Generated application projects and installers
+projects/
+installers/
+release/

@@ -1,0 +1,130 @@
+{
+  "_notes": [
+    "Config filled for the Kush / Nubia custom civilization under Amanirenas.",
+    "Unzip Kush_Renamed_PNGs.zip into the PNGtoDDSConverter repo root so files land under ./Input/Kush/.",
+    "PowerShell check: py -3 .\\universal_civ5_pipeline_spartan_artfix_v9.py --config .\\Kush_civ_creation_template.json --check-only",
+    "PowerShell build: py -3 .\\universal_civ5_pipeline_spartan_artfix_v9.py --config .\\Kush_civ_creation_template.json",
+    "PowerShell import after reviewing previews: py -3 .\\universal_civ5_pipeline_spartan_artfix_v9.py --config .\\Kush_civ_creation_template.json --write-mod",
+    "Normal icons use the Civ V circular icon profile with safe_subject_scale 0.65625.",
+    "Alpha and unit flags use black-to-transparent glyph profiles; filenames intentionally include _black.",
+    "Leader scene uses a 4:3 profile because the generated scene is 1448x1086."
+  ],
+  "prefix": "Kush",
+  "input_dir": "./Input/Kush",
+  "output_dir": "./Output/Kush",
+  "mod_data_dir": "C:/Users/ExampleUser/Documents/My Games/Sid Meier's Civilization 5/MODS/The Kushites BNW Custom Civ",
+  "civ_icon": "./Input/Kush/Kush_CivilizationIcon.png",
+  "leader_icon": "./Input/Kush/Amanirenas_LeaderIcon.png",
+  "alpha_icon": "./Input/Kush/Kush_AlphaIcon_black.png",
+  "default_profile": "civ5_circular_icon",
+  "normal_icon_profile": "civ5_circular_icon",
+  "support_icon_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "unit_flag_profile": "civ5_unit_flag_black_to_transparent",
+  "icon_fit_policy": "contain",
+  "write_per_asset_previews": true,
+  "allow_numeric_suffixes": false,
+  "units": [
+    {
+      "label": "MedjayPathfinder",
+      "source": "./Input/Kush/MedjayPathfinder_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_MEDJAY_PATHFINDER",
+      "portrait_index": 2,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "KushiteRoyalBowman",
+      "source": "./Input/Kush/KushiteRoyalBowman_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_KUSHITE_ROYAL_BOWMAN",
+      "portrait_index": 3,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "buildings": [
+    {
+      "label": "BowyersCompound",
+      "source": "./Input/Kush/BowyersCompound_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_BOWYERS_COMPOUND",
+      "portrait_index": 4,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "CataractFortress",
+      "source": "./Input/Kush/CataractFortress_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_CATARACT_FORTRESS",
+      "portrait_index": 5,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "supports": [
+    {
+      "label": "PreyOnTheWeak",
+      "source": "./Input/Kush/PreyOnTheWeak_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_PREY_ON_THE_WEAK",
+      "portrait_index": 6,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "LionsAdvance",
+      "source": "./Input/Kush/LionsAdvance_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_LIONS_ADVANCE",
+      "portrait_index": 7,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "FletchedArrows",
+      "source": "./Input/Kush/FletchedArrows_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_FLETCHED_ARROWS",
+      "portrait_index": 8,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "flags": [
+    {
+      "label": "MedjayPathfinder",
+      "source": "./Input/Kush/MedjayPathfinder_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_MEDJAY_PATHFINDER",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "KushiteRoyalBowman",
+      "source": "./Input/Kush/KushiteRoyalBowman_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_KUSHITE_ROYAL_BOWMAN",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "map_image": "./Input/Kush/Map_Kush512.png",
+  "dawn_image": "./Input/Kush/DawnOfMan_Kush.png",
+  "leader_scene": "./Input/Kush/Amanirenas_Scene.png",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+  "icon_atlas_name": "KUSH_ICON_ATLAS",
+  "icon_atlas_stem": "Kush_IconAtlas",
+  "alpha_atlas_name": "KUSH_ALPHA_ATLAS",
+  "flag_atlas_name": "KUSH_UNIT_FLAG_ATLAS",
+  "flag_atlas_stem": "Kush_UnitFlagAtlas",
+  "map_output_name": "Map_Kush512.dds",
+  "dawn_output_name": "DawnOfMan_Kush.dds",
+  "leader_scene_output_name": "Amanirenas_Scene.dds",
+  "bake_circular_mask": false,
+  "bake_medallions": false,
+  "allow_painted_flags": false,
+  "preset": "existing-combined-atlas",
+  "copy_new_assets": false,
+  "update_modinfo_imports": false
+}

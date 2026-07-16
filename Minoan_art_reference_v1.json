@@ -1,0 +1,136 @@
+{
+  "_notes": [
+    "Pipeline config for universal_civ5_pipeline.py using the uploaded Minoan PNG art pack and the Ghaznavids/Goguryeo/Florence JSON structure.",
+    "Extract Minoan.zip into C:/Repos/PNGtoDDSConverter/Input/ so the PNGs land in C:/Repos/PNGtoDDSConverter/Input/Minoan/.",
+    "Normal icons use the Spartan/Firaxis footprint: 0.65625 of each cell, so 256px cells get about 168px visible art.",
+    "Alpha icon and unit flags use _black filenames and are processed through black-to-transparent glyph profiles.",
+    "Normal atlas index map: 0 civ, 1 leader, 2 BullLeaper, 3 KeftiuTraderWarship, 4 PalaceOfKnossos, 5 BronzeFoundry, 6 BullLeaper, 7 KeftiuTradeCircuit, 8 KnossianNavigation, 9 ThalassocraticEngineering.",
+    "Confirmed all source PNG basenames in this JSON exist in the uploaded Minoan.zip art pack. Confirm type_name values against the Minoan mod SQL/XML before using --write-mod if the gameplay database uses different Type values."
+  ],
+  "prefix": "Minoan",
+  "input_dir": "C:/Repos/PNGtoDDSConverter/Input/Minoan",
+  "output_dir": "C:/Repos/PNGtoDDSConverter/Output/Minoan",
+  "civ_icon": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minoan_CivilizationIcon.png",
+  "leader_icon": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minos_LeaderIcon.png",
+  "alpha_icon": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minoan_AlphaIcon_black.png",
+  "default_profile": "civ5_circular_icon",
+  "normal_icon_profile": "civ5_circular_icon",
+  "support_icon_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "unit_flag_profile": "civ5_unit_flag_black_to_transparent",
+  "icon_fit_policy": "contain",
+  "write_per_asset_previews": true,
+  "allow_numeric_suffixes": false,
+  "units": [
+    {
+      "label": "BullLeaper",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/BullLeaper_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_MINOAN_BULL_LEAPER",
+      "portrait_index": 2,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "KeftiuTraderWarship",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/KeftiuTraderWarship_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_MINOAN_KEFTIU_TRADER_WARSHIP",
+      "portrait_index": 3,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "buildings": [
+    {
+      "label": "PalaceOfKnossos",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/PalaceOfKnossos_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_MINOAN_PALACE_OF_KNOSSOS",
+      "portrait_index": 4,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "BronzeFoundry",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/BronzeFoundry_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_MINOAN_BRONZE_FOUNDRY",
+      "portrait_index": 5,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "supports": [
+    {
+      "label": "BullLeaper",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/BullLeaper_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_MINOAN_BULL_LEAPER",
+      "portrait_index": 6,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "KeftiuTradeCircuit",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/KeftiuTradeCircuit_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_MINOAN_KEFTIU_TRADE_CIRCUIT",
+      "portrait_index": 7,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "KnossianNavigation",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/KnossianNavigation_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_MINOAN_KNOSSIAN_NAVIGATION",
+      "portrait_index": 8,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "ThalassocraticEngineering",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/ThalassocraticEngineering_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_MINOAN_THALASSOCRATIC_ENGINEERING",
+      "portrait_index": 9,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "flags": [
+    {
+      "label": "BullLeaper",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/BullLeaper_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_MINOAN_BULL_LEAPER",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "KeftiuTraderWarship",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Minoan/KeftiuTraderWarship_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_MINOAN_KEFTIU_TRADER_WARSHIP",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "map_image": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Map_Minoan512.png",
+  "dawn_image": "C:/Repos/PNGtoDDSConverter/Input/Minoan/DawnOfMan_Minoan.png",
+  "leader_scene": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minos_Scene.png",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+  "icon_atlas_name": "MINOAN_ICON_ATLAS",
+  "icon_atlas_stem": "Minoan_IconAtlas",
+  "alpha_atlas_name": "MINOAN_ALPHA_ATLAS",
+  "flag_atlas_name": "MINOAN_UNIT_FLAG_ATLAS",
+  "flag_atlas_stem": "Minoan_UnitFlagAtlas",
+  "map_output_name": "Map_Minoan512.dds",
+  "dawn_output_name": "DawnOfMan_Minoan.dds",
+  "leader_scene_output_name": "Minos_Scene.dds",
+  "bake_circular_mask": false,
+  "bake_medallions": false,
+  "allow_painted_flags": false,
+  "preset": "existing-combined-atlas",
+  "copy_new_assets": false,
+  "update_modinfo_imports": false
+}

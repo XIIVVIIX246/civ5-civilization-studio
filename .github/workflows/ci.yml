@@ -1,0 +1,135 @@
+name: Civilization Studio CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Verify package and module versions agree
+        shell: powershell
+        run: |
+          $packageVersion = (python -c "from importlib.metadata import version; print(version('civ5-civilization-studio'))").Trim()
+          $moduleVersion = (python -c "import civ5studio; print(civ5studio.__version__)").Trim()
+          if ($packageVersion -ne $moduleVersion) {
+            throw "Version mismatch: package=$packageVersion module=$moduleVersion"
+          }
+      - name: Compile Python sources
+        run: python -m compileall -q src tools
+      - name: Run static and integration tests
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: python -m pytest -q
+      - name: Verify clean patch formatting
+        run: git diff --check
+
+  windows-package:
+    if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install packaging dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Verify release tag matches package version
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: powershell
+        run: |
+          $version = (python -c "from importlib.metadata import version; print(version('civ5-civilization-studio'))").Trim()
+          if ($env:GITHUB_REF_NAME -notin @($version, "v$version")) {
+            throw "Release tag '$env:GITHUB_REF_NAME' does not match package version '$version'."
+          }
+      - name: Build and probe frozen Windows application
+        shell: powershell
+        run: ./tools/build_windows.ps1 -PythonPath (Get-Command python).Source -SkipTests
+      - name: Install Inno Setup 6
+        shell: powershell
+        run: choco install innosetup -y --no-progress
+      - name: Build installer and optionally Authenticode-sign it
+        shell: powershell
+        env:
+          WINDOWS_SIGNING_PFX_BASE64: ${{ secrets.WINDOWS_SIGNING_PFX_BASE64 }}
+          WINDOWS_SIGNING_PFX_PASSWORD: ${{ secrets.WINDOWS_SIGNING_PFX_PASSWORD }}
+        run: |
+          $thumbprint = ""
+          $certificate = $null
+          $certificatePath = Join-Path $env:RUNNER_TEMP "civ5studio-signing.pfx"
+          try {
+            if ([bool]$env:WINDOWS_SIGNING_PFX_BASE64 -xor [bool]$env:WINDOWS_SIGNING_PFX_PASSWORD) {
+              throw "Both Windows signing secrets must be configured together."
+            }
+            if ($env:WINDOWS_SIGNING_PFX_BASE64) {
+              [System.IO.File]::WriteAllBytes(
+                $certificatePath,
+                [System.Convert]::FromBase64String($env:WINDOWS_SIGNING_PFX_BASE64)
+              )
+              $securePassword = ConvertTo-SecureString `
+                $env:WINDOWS_SIGNING_PFX_PASSWORD -AsPlainText -Force
+              $certificate = Import-PfxCertificate `
+                -FilePath $certificatePath `
+                -CertStoreLocation Cert:\CurrentUser\My `
+                -Password $securePassword `
+                -Exportable:$false
+              $thumbprint = $certificate.Thumbprint
+            }
+            ./tools/build_installer.ps1 -SigningCertificateSha1 $thumbprint
+          }
+          finally {
+            Remove-Item -LiteralPath $certificatePath -Force -ErrorAction SilentlyContinue
+            if ($certificate) {
+              Remove-Item -LiteralPath "Cert:\CurrentUser\My\$($certificate.Thumbprint)" `
+                -Force -ErrorAction SilentlyContinue
+            }
+          }
+      - name: Upload executable, installer, deterministic ZIP, manifest, and SHA-256
+        uses: actions/upload-artifact@v4
+        with:
+          name: civ5-civilization-studio-windows
+          path: |
+            release/Civ5-Civilization-Studio-*
+          if-no-files-found: error
+
+  draft-release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: windows-package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download validated Windows artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: civ5-civilization-studio-windows
+          path: artifact
+      - name: Create reviewable draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mapfile -t files < <(find artifact -type f \( -name '*.zip' -o -name '*.sha256.txt' -o -name '*-Setup.exe' \) -print)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No release files were downloaded." >&2
+            exit 1
+          fi
+          gh release create "$GITHUB_REF_NAME" "${files[@]}" \
+            --verify-tag \
+            --draft \
+            --generate-notes \
+            --title "Civ V Civilization Studio $GITHUB_REF_NAME"

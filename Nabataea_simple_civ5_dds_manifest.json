@@ -1,0 +1,130 @@
+{
+  "output": {
+    "output_dir": "C:/Repos/PNGtoDDSConverter/Output/Nabataea/Art",
+    "normal_atlas_base": "NabataeaIconAtlas",
+    "normal_atlas_pattern": "NabataeaIconAtlas{size}.dds",
+    "alpha_base": "NabataeaAlpha",
+    "alpha_pattern": "NabataeaAlpha{size}.dds",
+    "unit_flag_atlas_name": "NabataeaUnitFlags32.dds",
+    "map_output_name": "Map_Nabataea512.dds",
+    "dawn_output_name": "DawnOfMan_Nabataea.dds",
+    "leader_scene_output_name": "Nabataea_LeaderScene.dds",
+    "preview_dir_name": "Previews"
+  },
+  "mod_art_dir": "C:/Repos/Nabataea_BNW_Custom_Civ/Art",
+  "copy_to_mod": false,
+  "assets": {
+    "civ_icon": {
+      "label": "Nabataea Civilization Icon",
+      "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/Nabataea_CivilizationIcon.png",
+      "role": "civ",
+      "profile": "prebuilt_circle",
+      "portrait_index": 0
+    },
+    "leader_icon": {
+      "label": "Aretas IV Leader Icon",
+      "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/AretasIV_LeaderIcon.png",
+      "role": "leader",
+      "profile": "prebuilt_circle",
+      "portrait_index": 1
+    },
+    "normal_icons": [
+      {
+        "label": "Desert Prowler",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/DesertProwler_Icon.png",
+        "role": "unit",
+        "profile": "prebuilt_circle",
+        "portrait_index": 2
+      },
+      {
+        "label": "Camel Skirmisher",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/CamelSkirmisher_Icon.png",
+        "role": "unit",
+        "profile": "raw_square_medallion",
+        "portrait_index": 3,
+        "subject_ratio": 0.8
+      },
+      {
+        "label": "Siq Cistern",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/SiqCistern_Icon.png",
+        "role": "building",
+        "profile": "prebuilt_circle",
+        "portrait_index": 4,
+        "visible_ratio": 0.6953125
+      },
+      {
+        "label": "Rock-Cut Treasury",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/RockCutTreasury_Icon.png",
+        "role": "building",
+        "profile": "prebuilt_circle",
+        "portrait_index": 5,
+        "visible_ratio": 0.6953125
+      },
+      {
+        "label": "Masters of the Incense Route",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/MastersOfTheIncenseRoute_PromotionIcon.png",
+        "role": "support",
+        "profile": "prebuilt_circle",
+        "portrait_index": 6
+      },
+      {
+        "label": "Desert Defense",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/DesertDefense_PromotionIcon.png",
+        "role": "support",
+        "profile": "prebuilt_circle",
+        "portrait_index": 7
+      },
+      {
+        "label": "Dune Walker",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/DuneWalker_PromotionIcon.png",
+        "role": "support",
+        "profile": "prebuilt_circle",
+        "portrait_index": 8
+      },
+      {
+        "label": "Sandstorm Cloak",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/SandstormCloak_PromotionIcon.png",
+        "role": "support",
+        "profile": "prebuilt_circle",
+        "portrait_index": 9
+      },
+      {
+        "label": "No Horses",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/NoHorses_PromotionIcon.png",
+        "role": "support",
+        "profile": "raw_square_medallion",
+        "portrait_index": 10,
+        "subject_ratio": 0.8
+      },
+      {
+        "label": "Rough Terrain Mastery",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/RoughTerrainMastery_PromotionIcon.png",
+        "role": "support",
+        "profile": "prebuilt_circle",
+        "portrait_index": 11
+      }
+    ],
+    "alpha_icon": {
+      "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/Nabataea_AlphaIcon_black.png",
+      "visible_ratio": 0.7,
+      "source_mode": "white_on_black"
+    },
+    "unit_flags": [
+      {
+        "label": "Desert Prowler",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/DesertProwler_UnitFlag_black.png",
+        "visible_ratio": 0.6875,
+        "source_mode": "white_on_black"
+      },
+      {
+        "label": "Camel Skirmisher",
+        "file": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/CamelSkirmisher_UnitFlag_black.png",
+        "visible_ratio": 0.6875,
+        "source_mode": "white_on_black"
+      }
+    ],
+    "map_image": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/Map_Nabataea512.png",
+    "dawn_image": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/DawnOfMan_Nabataea.png",
+    "leader_scene": "C:/Repos/PNGtoDDSConverter/Input/Nabataea/Nabataea_LeaderScene.png",
+  }
+}

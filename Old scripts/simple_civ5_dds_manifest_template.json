@@ -1,0 +1,89 @@
+{
+  "output": {
+    "output_dir": "./Output/MyCiv/Art",
+    "normal_atlas_base": "MyCiv_IconAtlas",
+    "alpha_base": "MyCiv_Alpha",
+    "unit_flag_atlas_name": "MyCiv_UnitFlagAtlas_32.dds",
+    "map_output_name": "Map_MyCiv512.dds",
+    "dawn_output_name": "DawnOfMan_MyCiv.dds",
+    "leader_scene_output_name": "Leader_MyCiv_Scene.dds",
+    "preview_dir_name": "Previews"
+  },
+  "mod_art_dir": "./MODS/MyCiv/Art",
+  "copy_to_mod": false,
+  "assets": {
+    "civ_icon": {
+      "label": "Civilization",
+      "file": "./Input/MyCiv/MyCiv_CivilizationIcon.png",
+      "role": "civ",
+      "profile": "prebuilt_circle",
+      "portrait_index": 0
+    },
+    "leader_icon": {
+      "label": "Leader",
+      "file": "./Input/MyCiv/MyLeader_LeaderIcon.png",
+      "role": "leader",
+      "profile": "raw_square_medallion",
+      "portrait_index": 1,
+      "subject_ratio": 0.78
+    },
+    "normal_icons": [
+      {
+        "label": "UniqueUnit1",
+        "file": "./Input/MyCiv/UniqueUnit1_Icon.png",
+        "role": "unit",
+        "profile": "prebuilt_circle",
+        "portrait_index": 2
+      },
+      {
+        "label": "UniqueUnit2",
+        "file": "./Input/MyCiv/UniqueUnit2_Icon.png",
+        "role": "unit",
+        "profile": "prebuilt_circle",
+        "portrait_index": 3
+      },
+      {
+        "label": "UniqueBuilding1",
+        "file": "./Input/MyCiv/UniqueBuilding1_Icon.png",
+        "role": "building",
+        "profile": "prebuilt_circle",
+        "portrait_index": 4,
+        "visible_ratio": 0.6953125
+      },
+      {
+        "label": "UniqueBuilding2",
+        "file": "./Input/MyCiv/UniqueBuilding2_Icon.png",
+        "role": "building",
+        "profile": "raw_square_medallion",
+        "portrait_index": 5,
+        "subject_ratio": 0.80
+      },
+      {
+        "label": "SupportPromotion1",
+        "file": "./Input/MyCiv/SupportPromotion1_Icon.png",
+        "role": "support",
+        "profile": "prebuilt_circle",
+        "portrait_index": 6
+      }
+    ],
+    "alpha_icon": {
+      "file": "./Input/MyCiv/MyCiv_AlphaIcon_black.png",
+      "visible_ratio": 0.70
+    },
+    "unit_flags": [
+      {
+        "label": "UniqueUnit1",
+        "file": "./Input/MyCiv/UniqueUnit1_UnitFlag_black.png",
+        "visible_ratio": 0.6875
+      },
+      {
+        "label": "UniqueUnit2",
+        "file": "./Input/MyCiv/UniqueUnit2_UnitFlag_black.png",
+        "visible_ratio": 0.6875
+      }
+    ],
+    "map_image": "./Input/MyCiv/Map_MyCiv512.png",
+    "dawn_image": "./Input/MyCiv/DawnOfMan_MyCiv.png",
+    "leader_scene": "./Input/MyCiv/MyLeader_Scene.png"
+  }
+}

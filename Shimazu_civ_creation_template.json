@@ -1,0 +1,131 @@
+{
+  "_notes": [
+    "Config filled for The Shimazu Clan custom civilization under Shimazu Yoshihiro.",
+    "Unzip Shimazu_Pipeline_Package.zip into the PNGtoDDSConverter repo root so files land under ./Input/Shimazu/.",
+    "PowerShell check: py -3 .\\universal_civ5_pipeline_spartan_artfix_v9.py --config .\\Shimazu_civ_creation_template.json --check-only",
+    "PowerShell build: py -3 .\\universal_civ5_pipeline_spartan_artfix_v9.py --config .\\Shimazu_civ_creation_template.json",
+    "Default preset is no-mod-integration so DDS/previews can be generated before the final mod folder exists.",
+    "After the Shimazu mod folder exists, set preset to existing-combined-atlas, set mod_data_dir, then run --write-mod.",
+    "Normal icons use the Civ V circular icon profile with safe_subject_scale 0.65625.",
+    "Alpha and unit flags use black-to-transparent glyph profiles; filenames intentionally include _black.",
+    "Leader scene source is widescreen; Civ V final leader-scene DDS should still be produced through the leader scene crop/profile used by the pipeline."
+  ],
+  "prefix": "Shimazu",
+  "input_dir": "./Input/Shimazu",
+  "output_dir": "./Output/Shimazu",
+  "mod_data_dir": "",
+  "civ_icon": "./Input/Shimazu/Shimazu_CivilizationIcon.png",
+  "leader_icon": "./Input/Shimazu/ShimazuYoshihiro_LeaderIcon.png",
+  "alpha_icon": "./Input/Shimazu/Shimazu_AlphaIcon_black.png",
+  "default_profile": "civ5_circular_icon",
+  "normal_icon_profile": "civ5_circular_icon",
+  "support_icon_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "unit_flag_profile": "civ5_unit_flag_black_to_transparent",
+  "icon_fit_policy": "contain",
+  "write_per_asset_previews": true,
+  "allow_numeric_suffixes": false,
+  "units": [
+    {
+      "label": "ShimazuSamurai",
+      "source": "./Input/Shimazu/ShimazuSamurai_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_SHIMAZU_SAMURAI",
+      "portrait_index": 2,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "TanegashimaAshigaru",
+      "source": "./Input/Shimazu/TanegashimaAshigaru_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_TANEGASHIMA_ASHIGARU",
+      "portrait_index": 3,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "buildings": [
+    {
+      "label": "DaimyoFortress",
+      "source": "./Input/Shimazu/DaimyoFortress_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_DAIMYO_FORTRESS",
+      "portrait_index": 4,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "supports": [
+    {
+      "label": "SatsumaSteel",
+      "source": "./Input/Shimazu/SatsumaSteel_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_SATSUMA_STEEL",
+      "portrait_index": 5,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "BloodedSteel",
+      "source": "./Input/Shimazu/BloodedSteel_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_BLOODED_STEEL",
+      "portrait_index": 6,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "VolleyLines",
+      "source": "./Input/Shimazu/VolleyLines_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_VOLLEY_LINES",
+      "portrait_index": 7,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "WarForge",
+      "source": "./Input/Shimazu/WarForge_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_WAR_FORGE",
+      "portrait_index": 8,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "flags": [
+    {
+      "label": "ShimazuSamurai",
+      "source": "./Input/Shimazu/ShimazuSamurai_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_SHIMAZU_SAMURAI",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "TanegashimaAshigaru",
+      "source": "./Input/Shimazu/TanegashimaAshigaru_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_TANEGASHIMA_ASHIGARU",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "map_image": "./Input/Shimazu/Map_Shimazu512.png",
+  "dawn_image": "./Input/Shimazu/DawnOfMan_Shimazu.png",
+  "leader_scene": "./Input/Shimazu/ShimazuYoshihiro_LeaderScene.png",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+  "icon_atlas_name": "SHIMAZU_ICON_ATLAS",
+  "icon_atlas_stem": "Shimazu_IconAtlas",
+  "alpha_atlas_name": "SHIMAZU_ALPHA_ATLAS",
+  "flag_atlas_name": "SHIMAZU_UNIT_FLAG_ATLAS",
+  "flag_atlas_stem": "Shimazu_UnitFlagAtlas",
+  "map_output_name": "Map_Shimazu512.dds",
+  "dawn_output_name": "DawnOfMan_Shimazu.dds",
+  "leader_scene_output_name": "ShimazuYoshihiro_LeaderScene.dds",
+  "bake_circular_mask": false,
+  "bake_medallions": false,
+  "allow_painted_flags": false,
+  "preset": "no-mod-integration",
+  "copy_new_assets": false,
+  "update_modinfo_imports": false
+}

@@ -1,0 +1,340 @@
+{
+  "_about": [
+    "Config for universal_civ5_pipeline.py -- the ART / DDS stage of a Civilization V",
+    "Brave New World custom-civ build. This is a REUSABLE TEMPLATE: rename the prefix,",
+    "swap the placeholder paths/labels/type names for your civ, then run.",
+    "",
+    "This stage builds the icon atlases, alpha/team icons, unit flags, Dawn of Man image,",
+    "map image, and leader scene, then writes IconTextureAtlas XML, a DDS manifest, a QA",
+    "report, and per-asset previews. It does NOT generate Civilization.sql / Leader.sql /",
+    "Trait.sql / Text.sql / Colors.sql / the .modinfo -- those gameplay tables belong to the",
+    "separate SQL/text/.modinfo stage. The naming for that stage is documented under the",
+    "_civ_design_reference key below, which this art pipeline ignores.",
+    "",
+    "JSON has no comment syntax, so all explanatory text lives in _-prefixed keys that the",
+    "pipeline does not read.",
+    "",
+    "Paths are relative to the directory you run the script from. Put your PNG files at the",
+    "listed Input/<PREFIX>/ paths. Filenames must NOT carry trailing numeric suffixes like",
+    "_1 or _256 (the pipeline appends size suffixes itself).",
+    "",
+    "Run:",
+    "  python universal_civ5_pipeline.py --config SPARTAN_LEAGUE_CUSTOM.dds.json --check-only",
+    "  python universal_civ5_pipeline.py --config SPARTAN_LEAGUE_CUSTOM.dds.json",
+    "",
+    "Atlas layout (fixed in code, not set here):",
+    "  Normal icon atlas: 4x4 grid (16 cells); sizes 256,128,80,64,45,32 (256 atlas = 1024x1024).",
+    "  Unit flag atlas:   8x8 grid, 32px cells (256x256).",
+    "  Leader scene:      1024x768 (civ5_leader_scene_4x3) or 1280x720 (civ5_leader_scene_16x9).",
+    "  Dawn of Man:       1024x768.  Map: 512x512.",
+    "The IconTextureAtlas XML it emits already matches this 4x4 / 16-cell layout."
+  ],
+  "_dds_format_note": [
+    "DDS pixel formats are chosen per asset category, fixed in code:",
+    "  Normal icon atlas (civ/leader/unit/building/promotion) -> DXT5 (one combined atlas,",
+    "    so the leader ICON shares DXT5; the leader 2D SCENE is separate, see below).",
+    "  Alpha / team icon                                       -> DXT5, except any tile whose",
+    "    pixel size is not a multiple of 4 (the 45px tile) auto-falls back to uncompressed",
+    "    A8R8G8B8, because block compression requires mult-of-4 dimensions. Alpha is preserved.",
+    "  Unit flags                                              -> uncompressed A8R8G8B8.",
+    "  Dawn of Man screen                                      -> DXT1 (no mipmaps).",
+    "  Leader 2D scene                                         -> DXT1 (with a generated mip chain).",
+    "  Map image                                               -> uncompressed A8R8G8B8.",
+    "NEVER export icons/flags/alpha as DXT1: it drops the alpha and you get a solid square."
+  ],
+  "_sizing_note": [
+    "The subject is CONTAINED at a per-category scale (subject longest side / cell), never",
+    "cover-filled, so opaque/full-bleed art cannot blow up to fill the whole circle:",
+    "  units / buildings / civ emblem .... 0.58",
+    "  promotions / ability icons ........ 0.68",
+    "  leader portrait icon .............. 0.75",
+    "  unit map flags .................... 0.78",
+    "  alpha / team-colour stencil ....... 0.62",
+    "icon_fit_policy 'contain' (default) and 'auto' both apply these exact scales; 'cover' is",
+    "legacy and fills/crops the circle (looks larger than Firaxis stock). To override one",
+    "asset only, add \"safe_subject_scale\": <0.0-1.0> to that asset object."
+  ],
+  "_source_art_naming": [
+    "Civilization icon    -> civ_icon                 -> SpartanLeague_CivilizationIcon.png",
+    "Civilization alpha   -> alpha_icon               -> SpartanLeague_AlphaIcon_black.png",
+    "Leader icon          -> leader_icon              -> Leonidas_LeaderIcon.png",
+    "Unique unit icon     -> units[].source           -> HomoioiHoplite_Icon.png / KrypteiaScout_Icon.png",
+    "Unique unit flag     -> flags[].source           -> HomoioiHoplite_UnitFlag_black.png / KrypteiaScout_UnitFlag_black.png",
+    "Unique building icon -> buildings[].source       -> HelotQuarter_Icon.png / SpartanAgogeAssembly_Icon.png",
+    "Support/promotion    -> supports[].source        -> GreatPhalanxDiscipline_PromotionIcon.png / HelotWarLabor_PromotionIcon.png / HomoioiShieldWall_PromotionIcon.png / KrypteiaStealthExecution_PromotionIcon.png",
+    "Leader scene         -> leader_scene             -> Leonidas_Scene.png",
+    "Dawn of Man image    -> dawn_image               -> DawnOfMan_SpartanLeague.png",
+    "Map image            -> map_image                -> Map_SpartanLeague512.png"
+  ],
+  "prefix": "SPARTAN_LEAGUE_CUSTOM",
+  "output_dir": "Output/SPARTAN_LEAGUE_CUSTOM",
+  "mod_data_dir": "C:/Users/ExampleUser/Documents/My Games/Sid Meier's Civilization 5/MODS/The Spartan League BNW Custom Civ",
+  "_mod_data_dir_note": "Only used with --write-mod (to drop the DDS into an existing mod folder and refresh .modinfo MD5s). For a plain run or --check-only it is ignored. Leave/rename freely.",
+  "icon_fit_policy": "contain",
+  "_icon_fit_policy_note": "contain (default) scales each subject to the per-category target above and leaves the intended margin; auto behaves identically; cover (legacy) fills the whole circle and crops overflow (larger than Firaxis stock).",
+  "default_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "_alpha_profile_note": "Use civ5_alpha_glyph_black_to_transparent when the alpha source is a white logo on a BLACK background. If your alpha source is already white-on-transparent, remove this key (the default path forces the symbol white and keeps the existing alpha).",
+  "leader_scene_profile": "civ5_leader_scene_16x9",
+  "_leader_scene_profile_note": "civ5_leader_scene_4x3 = 1024x768; civ5_leader_scene_16x9 = 1280x720 for widescreen leader art.",
+  "write_per_asset_previews": true,
+  "civ_icon": "Input/SPARTAN_LEAGUE_CUSTOM/SpartanLeague_CivilizationIcon.png",
+  "leader_icon": "Input/SPARTAN_LEAGUE_CUSTOM/Leonidas_LeaderIcon.png",
+  "alpha_icon": "Input/SPARTAN_LEAGUE_CUSTOM/SpartanLeague_AlphaIcon_black.png",
+  "units": [
+    {
+      "label": "HomoioiHoplite",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HomoioiHoplite_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_HOMOIOI_HOPLITE_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "KrypteiaScout",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/KrypteiaScout_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_KRYPTEIA_SCOUT_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "buildings": [
+    {
+      "label": "HelotQuarter",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HelotQuarter_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_HELOT_QUARTER_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "SpartanAgogeAssembly",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/SpartanAgogeAssembly_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_SPARTAN_AGOGE_ASSEMBLY_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "supports": [
+    {
+      "label": "GreatPhalanxDiscipline",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/GreatPhalanxDiscipline_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_GREAT_PHALANX_DISCIPLINE_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "HelotWarLabor",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HelotWarLabor_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_HELOT_WAR_LABOR_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "HomoioiShieldWall",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HomoioiShieldWall_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_HOMOIOI_SHIELD_WALL_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "KrypteiaStealthExecution",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/KrypteiaStealthExecution_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_KRYPTEIA_STEALTH_EXECUTION_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "flags": [
+    {
+      "label": "HomoioiHopliteFlag",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/HomoioiHoplite_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_HOMOIOI_HOPLITE_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "KrypteiaScoutFlag",
+      "source": "Input/SPARTAN_LEAGUE_CUSTOM/KrypteiaScout_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_KRYPTEIA_SCOUT_SPARTAN_LEAGUE_CUSTOM",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "leader_scene": "Input/SPARTAN_LEAGUE_CUSTOM/Leonidas_Scene.png",
+  "map_image": "Input/SPARTAN_LEAGUE_CUSTOM/Map_SpartanLeague512.png",
+  "dawn_image": "Input/SPARTAN_LEAGUE_CUSTOM/DawnOfMan_SpartanLeague.png",
+  "allow_painted_flags": false,
+  "icon_atlas_name": "SPARTAN_LEAGUE_CUSTOM_ICON_ATLAS",
+  "alpha_atlas_name": "SPARTAN_LEAGUE_CUSTOM_ALPHA_ATLAS",
+  "flag_atlas_name": "SPARTAN_LEAGUE_CUSTOM_UNIT_FLAG_ATLAS",
+  "icon_atlas_stem": "SPARTAN_LEAGUE_CUSTOM_IconAtlas",
+  "flag_atlas_stem": "SPARTAN_LEAGUE_CUSTOM_UnitFlagAtlas",
+  "dawn_output_name": "DawnOfMan_SpartanLeague.dds",
+  "map_output_name": "Map_SpartanLeague512.dds",
+  "leader_scene_output_name": "Leonidas_Scene.dds",
+  "_civ_design_reference": {
+    "_note": [
+      "NOT read by the art pipeline. This documents the Spartan League art set so the",
+      "separate SQL/text/.modinfo stage can consume the same names. Replacement targets,",
+      "trait effects, yields, flavors, and gameplay SQL MUST be verified against the",
+      "vanilla BNW database before implementation. Anything unmapped belongs in",
+      "UNIMPLEMENTED_EFFECTS.md or Lua-required notes."
+    ],
+    "_mandatory_start_boilerplate_sql": [
+      "Every normal Ancient-era major civ needs its OWN rows in these BNW join tables, or the",
+      "start breaks. These are required boilerplate (not optional):",
+      "  Civilization_FreeUnits          -> UNITCLASS_SETTLER, UNITAI_SETTLE, Count 1  (the starting Settler; omit it and the civ spawns with no Settler)",
+      "  Civilization_FreeBuildingClasses-> BUILDINGCLASS_PALACE                       (first founded city behaves/displays as the capital)",
+      "  Civilization_FreeTechs          -> TECH_AGRICULTURE                            (the standard starting technology)",
+      "Use INSERT (or INSERT OR REPLACE) with the civ's CivilizationType. Custom civs do NOT",
+      "inherit these from the base game just because a Civilizations row exists."
+    ],
+    "internal_prefix": "SPARTAN_LEAGUE_CUSTOM",
+    "mod": {
+      "name": "Spartan League (Custom)",
+      "guid_placeholder": "REPLACE-WITH-A-FRESH-GUID-0000-000000000000",
+      "version": 1,
+      "authors": "Your Name Here",
+      "teaser": "Adds the Spartan League under Leonidas.",
+      "description": "A custom Brave New World civilization: the Spartan League, led by Leonidas, with Spartan-themed units, buildings, and support/promotion art.",
+      "affects_saved_games": true
+    },
+    "civilization": {
+      "type": "CIVILIZATION_SPARTAN_LEAGUE_CUSTOM",
+      "short_description_text": "Spartan League",
+      "description_text": "Spartan League",
+      "adjective_text": "Spartan",
+      "region_inspiration_for_city_name_generator": "Ancient Greek / Lacedaemonian",
+      "starting_bias_note": "Set CivilizationType start bias only if supported by the verified DB schema."
+    },
+    "leader": {
+      "type": "LEADER_LEONIDAS_SPARTAN_LEAGUE_CUSTOM",
+      "name_text": "Leonidas",
+      "flavors_placeholder": {
+        "FLAVOR_OFFENSE": 8,
+        "FLAVOR_DEFENSE": 8,
+        "FLAVOR_MILITARY_TRAINING": 8,
+        "FLAVOR_EXPANSION": 4,
+        "FLAVOR_GROWTH": 4,
+        "FLAVOR_CULTURE": 5
+      },
+      "_flavor_note": "Use only FlavorTypes that exist in the vanilla DB. Values are placeholders 1-10."
+    },
+    "trait": {
+      "type": "TRAIT_GREAT_PHALANX_DISCIPLINE_SPARTAN_LEAGUE_CUSTOM",
+      "short_description_text": "Great Phalanx Discipline",
+      "description_text": "PLACEHOLDER trait effect — verify exact gameplay implementation separately.",
+      "candidate_effects": [
+        {
+          "description": "Placeholder: infantry/phalanx-oriented combat or discipline bonus.",
+          "mapping_status": "VERIFY against vanilla BNW tables; otherwise mark Lua-required or UNIMPLEMENTED_EFFECTS.md."
+        }
+      ]
+    },
+    "unique_units": [
+      {
+        "type": "UNIT_HOMOIOI_HOPLITE_SPARTAN_LEAGUE_CUSTOM",
+        "name_text": "Homoioi Hoplite",
+        "art_label_in_this_config": "HomoioiHoplite",
+        "free_promotions_placeholder": [
+          "PROMOTION_HOMOIOI_SHIELD_WALL_SPARTAN_LEAGUE_CUSTOM"
+        ],
+        "flavors_placeholder": {
+          "FLAVOR_OFFENSE": 8,
+          "FLAVOR_DEFENSE": 8
+        },
+        "replaces_unitclass_placeholder": "VERIFY"
+      },
+      {
+        "type": "UNIT_KRYPTEIA_SCOUT_SPARTAN_LEAGUE_CUSTOM",
+        "name_text": "Krypteia Scout",
+        "art_label_in_this_config": "KrypteiaScout",
+        "free_promotions_placeholder": [
+          "PROMOTION_KRYPTEIA_STEALTH_EXECUTION_SPARTAN_LEAGUE_CUSTOM"
+        ],
+        "flavors_placeholder": {
+          "FLAVOR_RECON": 8,
+          "FLAVOR_OFFENSE": 5
+        },
+        "replaces_unitclass_placeholder": "VERIFY"
+      }
+    ],
+    "unique_buildings": [
+      {
+        "type": "BUILDING_HELOT_QUARTER_SPARTAN_LEAGUE_CUSTOM",
+        "name_text": "Helot Quarter",
+        "art_label_in_this_config": "HelotQuarter",
+        "flavors_placeholder": {
+          "FLAVOR_GROWTH": 5,
+          "FLAVOR_PRODUCTION": 6
+        },
+        "replaces_buildingclass_placeholder": "VERIFY"
+      },
+      {
+        "type": "BUILDING_SPARTAN_AGOGE_ASSEMBLY_SPARTAN_LEAGUE_CUSTOM",
+        "name_text": "Spartan Agoge Assembly",
+        "art_label_in_this_config": "SpartanAgogeAssembly",
+        "flavors_placeholder": {
+          "FLAVOR_MILITARY_TRAINING": 8,
+          "FLAVOR_CULTURE": 4
+        },
+        "replaces_buildingclass_placeholder": "VERIFY"
+      }
+    ],
+    "support_icons": [
+      "PROMOTION_GREAT_PHALANX_DISCIPLINE_SPARTAN_LEAGUE_CUSTOM",
+      "PROMOTION_HELOT_WAR_LABOR_SPARTAN_LEAGUE_CUSTOM",
+      "PROMOTION_HOMOIOI_SHIELD_WALL_SPARTAN_LEAGUE_CUSTOM",
+      "PROMOTION_KRYPTEIA_STEALTH_EXECUTION_SPARTAN_LEAGUE_CUSTOM"
+    ],
+    "city_names": [
+      "Sparta",
+      "Amyclae",
+      "Sellasia",
+      "Therapne",
+      "Gytheion",
+      "Las",
+      "Oitylos",
+      "Cardamyle",
+      "Thalamai",
+      "Geronthrai",
+      "Boiai",
+      "Aigiai",
+      "Pellana",
+      "Leuktra",
+      "Messe",
+      "Pharis"
+    ],
+    "spy_names": [
+      "Brasidas",
+      "Gorgo",
+      "Pausanias",
+      "Chilon",
+      "Lysander",
+      "Agesilaus",
+      "Cleomenes",
+      "Dienekes",
+      "Aristodemus",
+      "Cynisca"
+    ],
+    "colors": {
+      "player_color_type": "PLAYERCOLOR_SPARTAN_LEAGUE_CUSTOM",
+      "primary_color_type": "COLOR_PLAYER_SPARTAN_LEAGUE_CUSTOM_PRIMARY",
+      "secondary_color_type": "COLOR_PLAYER_SPARTAN_LEAGUE_CUSTOM_SECONDARY",
+      "_format_note": "Civ V Colors are stored as 0.0-1.0 RGBA floats in the Colors table. Values below are placeholders inferred from Spartan red/bronze art direction.",
+      "primary_rgba": [
+        0.55,
+        0.02,
+        0.02,
+        1.0
+      ],
+      "secondary_rgba": [
+        0.78,
+        0.56,
+        0.2,
+        1.0
+      ],
+      "text_color_type": "COLOR_PLAYER_SPARTAN_LEAGUE_CUSTOM_SECONDARY",
+      "icon_color_type": "COLOR_PLAYER_SPARTAN_LEAGUE_CUSTOM_PRIMARY"
+    }
+  }
+}

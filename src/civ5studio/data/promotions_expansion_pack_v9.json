@@ -1,0 +1,194 @@
+{
+  "catalog_schema": 1,
+  "integration_id": "promotions_expansion_pack_v9",
+  "mod": {
+    "id": "0d764575-8028-4350-a363-c1ffb88b6a9a",
+    "version": 9,
+    "name": "Promotions - Expansion Pack",
+    "authors": "Bloublou"
+  },
+  "evidence": [
+    {
+      "relative_path": "Promotions - Expansion Pack (v 9).modinfo",
+      "sha256": "BB24A81BB1A1438B6786502E18CF962C4A618AC3863107F4A1D9E4AAB2672989"
+    },
+    {
+      "relative_path": "PEP - INIT.xml",
+      "sha256": "35F4669FDA56D57955B9A666CCC5EBD39F01920880BB59C45D3CDD0E3F1B879C",
+      "md5": "C63EE07171BCD321E3DC65901CFA514B",
+      "modinfo_declared_md5": "4B019768A27CF59ADC20060ECAB9E0A9"
+    }
+  ],
+  "promotions": [
+    {
+      "type": "PROM_UNLOCK_LVL_2",
+      "description_key": "TXT_PROM_UNLOCK_LVL_2",
+      "display_name": "Unlock Skill level 2",
+      "help_key": "TXT_PROM_UNLOCK_LVL_2_H",
+      "help_text": "Unlock [COLOR_POSITIVE_TEXT]Skill Level 2[ENDCOLOR] and receive +33% [COLOR_POSITIVE_TEXT]EXP[ENDCOLOR] Gain and +5% [ICON_STRENGTH] Attack/Defense",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 9
+    },
+    {
+      "type": "PROM_UNLOCK_LVL_3",
+      "description_key": "TXT_PROM_UNLOCK_LVL_3",
+      "display_name": "Unlock Skill level 3",
+      "help_key": "TXT_PROM_UNLOCK_LVL_3_H",
+      "help_text": "Unlock [COLOR_POSITIVE_TEXT]Skill Level 3[ENDCOLOR] and receive an additional +33% [COLOR_POSITIVE_TEXT]EXP[ENDCOLOR] Gain (Total 66%) and +5% [ICON_STRENGTH] Attack/Defense (Total 10%)",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 9
+    },
+    {
+      "type": "PROM_UNLOCK_LVL_4",
+      "description_key": "TXT_PROM_UNLOCK_LVL_4",
+      "display_name": "Unlock Skill level 4",
+      "help_key": "TXT_PROM_UNLOCK_LVL_4_H",
+      "help_text": "Unlock [COLOR_POSITIVE_TEXT]Skill Level 4[ENDCOLOR] and receive an additional +33% [COLOR_POSITIVE_TEXT]EXP[ENDCOLOR] Gain (Total 100%) and +5% [ICON_STRENGTH] Attack/Defense (Total 15%)",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 9
+    },
+    {
+      "type": "PROMOTION_REPUTATION",
+      "description_key": "TXT_KEY_PROMOTION_REPUTATION",
+      "display_name": "Reputation",
+      "help_key": "TXT_KEY_PROMOTION_REPUTATION_HELP",
+      "help_text": "Enemy units receive -10% [ICON_STRENGTH] Combat Strength when adjacent to any unit with this promotion.",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 37
+    },
+    {
+      "type": "PROMOTION_FOREIGN_M",
+      "description_key": "TXT_KEY_PROMOTION_FOREIGN",
+      "display_name": "Guerilla",
+      "help_key": "TXT_KEY_PROMOTION_FOREIGN_HELP",
+      "help_text": "+20% [ICON_STRENGTH] Combat Strength outside friendly territory",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 35
+    },
+    {
+      "type": "PROMOTION_FRIEND_M",
+      "description_key": "TXT_KEY_PROMOTION_FRIEND",
+      "display_name": "Militia",
+      "help_key": "TXT_KEY_PROMOTION_FRIEND_HELP",
+      "help_text": "+20% [ICON_STRENGTH] Combat Strength inside friendly territory",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 22
+    },
+    {
+      "type": "PROMOTION_GUARD_M",
+      "description_key": "TXT_KEY_PROMOTION_GUARD",
+      "display_name": "Guard",
+      "help_key": "TXT_KEY_PROMOTION_GUARD_HELP",
+      "help_text": "+30% [ICON_STRENGTH] near the [ICON_CAPITAL] capital. Based on Capital proximity (-5% per tile distance beetween unit and [ICON_CAPITAL] capital)",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 23
+    },
+    {
+      "type": "PROMOTION_PHEAL_M",
+      "description_key": "TXT_KEY_PROMOTION_PHEAL",
+      "display_name": "Victory",
+      "help_key": "TXT_KEY_PROMOTION_PHEAL_HELP",
+      "help_text": "Heal 25 HP upon defeating an enemy",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 8
+    },
+    {
+      "type": "PROMOTION_BRIBE_M",
+      "description_key": "TXT_KEY_PROMOTION_BRIBE",
+      "display_name": "Bribe",
+      "help_key": "TXT_KEY_PROMOTION_BRIBE_HELP",
+      "help_text": "Defeated enemy unit joins your side.",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 2
+    },
+    {
+      "type": "PROMOTION_GEN_M",
+      "description_key": "TXT_KEY_PROMOTION_GEN",
+      "display_name": "Leadership",
+      "help_key": "TXT_KEY_PROMOTION_GEN_HELP",
+      "help_text": "(+50%) contribution to Great Generals creation when fighting",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 18
+    },
+    {
+      "type": "PROMOTION_PILL_M",
+      "description_key": "TXT_KEY_PROMOTION_PILL",
+      "display_name": "Pillage",
+      "help_key": "TXT_KEY_PROMOTION_PILL_HELP",
+      "help_text": "No Movement Cost to Pillage",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 12
+    },
+    {
+      "type": "PROMOTION_ESC",
+      "description_key": "TXT_KEY_PROMOTION_ESC",
+      "display_name": "Escape",
+      "help_key": "TXT_KEY_PROMOTION_ESC_HELP",
+      "help_text": "Unit has a 40% chance to withdraw when faced with melee attack. Chance of withdrawal against fast enemies or if there are limited open tiles behind the unit.",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 21
+    },
+    {
+      "type": "PROMOTION_CITY_GOLD",
+      "description_key": "TXT_KEY_PROMOTION_CITY_GOLD",
+      "display_name": "Plunder",
+      "help_key": "TXT_KEY_PROMOTION_CITY_GOLD_HELP",
+      "help_text": "+15% [ICON_STRENGTH] Strength and earn Gold when attacking cities",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 42
+    },
+    {
+      "type": "PROMOTION_EFLANK",
+      "description_key": "TXT_KEY_PROMOTION_EFLANK",
+      "display_name": "Flanking",
+      "help_key": "TXT_KEY_PROMOTION_EFLANK_HELP",
+      "help_text": "Doubles the [ICON_STRENGTH] Combat Strength modifier on flanking bonus.",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 25
+    },
+    {
+      "type": "PROMOTION_EROUTE",
+      "description_key": "TXT_KEY_PROMOTION_EROUTE",
+      "display_name": "Invasion",
+      "help_key": "TXT_KEY_PROMOTION_EROUTE_HELP",
+      "help_text": "Move along enemy roads as if they were your own.",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 16
+    },
+    {
+      "type": "PROMOTION_SABOTAGE",
+      "description_key": "TXT_KEY_PROMOTION_SABOTAGE",
+      "display_name": "Sabotage",
+      "help_key": "TXT_KEY_PROMOTION_SABOTAGE_HELP",
+      "help_text": "+33% [ICON_STRENGTH] Strength against Siege Weapons",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 17
+    },
+    {
+      "type": "PROMOTION_MOUNTAIN",
+      "description_key": "TXT_KEY_PROMOTION_MOUNTAIN",
+      "display_name": "Hillmen",
+      "help_key": "TXT_KEY_PROMOTION_MOUNTAIN_HELP",
+      "help_text": "Double movement rate and increase [ICON_STRENGTH] Defense by 30% [COLOR_POSITIVE_TEXT]on Hills[ENDCOLOR].",
+      "sound": "AS2D_IF_LEVELUP",
+      "icon_atlas": "PROMOTION_ATLAS",
+      "portrait_index": 59
+    }
+  ]
+}

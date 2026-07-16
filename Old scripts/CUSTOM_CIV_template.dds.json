@@ -1,0 +1,320 @@
+{
+  "_about": [
+    "Config for universal_civ5_pipeline.py -- the ART / DDS stage of a Civilization V",
+    "Brave New World custom-civ build. This is a REUSABLE TEMPLATE: rename the prefix,",
+    "swap the placeholder paths/labels/type names for your civ, then run.",
+    "",
+    "This stage builds the icon atlases, alpha/team icons, unit flags, Dawn of Man image,",
+    "map image, and leader scene, then writes IconTextureAtlas XML, a DDS manifest, a QA",
+    "report, and per-asset previews. It does NOT generate Civilization.sql / Leader.sql /",
+    "Trait.sql / Text.sql / Colors.sql / the .modinfo -- those gameplay tables belong to the",
+    "separate SQL/text/.modinfo stage. The naming for that stage is documented under the",
+    "_civ_design_reference key below, which this art pipeline ignores.",
+    "",
+    "JSON has no comment syntax, so all explanatory text lives in _-prefixed keys that the",
+    "pipeline does not read.",
+    "",
+    "Paths are relative to the directory you run the script from. Put your PNG files at the",
+    "listed Input/<PREFIX>/ paths. Filenames must NOT carry trailing numeric suffixes like",
+    "_1 or _256 (the pipeline appends size suffixes itself).",
+    "",
+    "Run:",
+    "  python universal_civ5_pipeline.py --config YOURCIV_CUSTOM.dds.json --check-only",
+    "  python universal_civ5_pipeline.py --config YOURCIV_CUSTOM.dds.json",
+    "",
+    "Atlas layout (fixed in code, not set here):",
+    "  Normal icon atlas: 4x4 grid (16 cells); sizes 256,128,80,64,45,32 (256 atlas = 1024x1024).",
+    "  Unit flag atlas:   8x8 grid, 32px cells (256x256).",
+    "  Leader scene:      1024x768 (civ5_leader_scene_4x3) or 1280x720 (civ5_leader_scene_16x9).",
+    "  Dawn of Man:       1024x768.  Map: 512x512.",
+    "The IconTextureAtlas XML it emits already matches this 4x4 / 16-cell layout."
+  ],
+  "_dds_format_note": [
+    "DDS pixel formats are chosen per asset category, fixed in code:",
+    "  Normal icon atlas (civ/leader/unit/building/promotion) -> DXT5 (one combined atlas,",
+    "    so the leader ICON shares DXT5; the leader 2D SCENE is separate, see below).",
+    "  Alpha / team icon                                       -> DXT5, except any tile whose",
+    "    pixel size is not a multiple of 4 (the 45px tile) auto-falls back to uncompressed",
+    "    A8R8G8B8, because block compression requires mult-of-4 dimensions. Alpha is preserved.",
+    "  Unit flags                                              -> uncompressed A8R8G8B8.",
+    "  Dawn of Man screen                                      -> DXT1 (no mipmaps).",
+    "  Leader 2D scene                                         -> DXT1 (with a generated mip chain).",
+    "  Map image                                               -> uncompressed A8R8G8B8.",
+    "NEVER export icons/flags/alpha as DXT1: it drops the alpha and you get a solid square."
+  ],
+  "_sizing_note": [
+    "The subject is CONTAINED at a per-category scale (subject longest side / cell), never",
+    "cover-filled, so opaque/full-bleed art cannot blow up to fill the whole circle:",
+    "  units / buildings / civ emblem .... 0.58",
+    "  promotions / ability icons ........ 0.68",
+    "  leader portrait icon .............. 0.75",
+    "  unit map flags .................... 0.78",
+    "  alpha / team-colour stencil ....... 0.62",
+    "icon_fit_policy 'contain' (default) and 'auto' both apply these exact scales; 'cover' is",
+    "legacy and fills/crops the circle (looks larger than Firaxis stock). To override one",
+    "asset only, add \"safe_subject_scale\": <0.0-1.0> to that asset object."
+  ],
+  "_source_art_naming": [
+    "Civilization icon    -> civ_icon            -> YourCiv_CivilizationIcon.png",
+    "Civilization alpha   -> alpha_icon          -> YourCiv_AlphaIcon_black.png (white logo on black/transparent)",
+    "Leader icon          -> leader_icon         -> YourCiv_LeaderIcon.png",
+    "Unique unit icon     -> units[].source      -> YourCiv_UniqueUnitOneIcon.png / ...TwoIcon.png",
+    "Unique unit flag     -> flags[].source      -> YourCiv_UniqueUnitOneFlag.png / ...TwoFlag.png (white silhouette on black)",
+    "Unique building icon -> buildings[].source  -> YourCiv_UniqueBuildingOneIcon.png / ...TwoIcon.png",
+    "Support/promotion    -> supports[].source   -> YourCiv_AbilityIcon.png / ...PromotionIcon.png",
+    "Leader 2D scene      -> leader_scene        -> YourCiv_LeaderScene.png",
+    "Dawn of Man image    -> dawn_image          -> YourCiv_DawnOfMan.png",
+    "Map image            -> map_image           -> YourCiv_Map.png"
+  ],
+  "prefix": "YOURCIV_CUSTOM",
+  "output_dir": "Output/YOURCIV_CUSTOM",
+  "mod_data_dir": "C:/Users/YOU/Documents/My Games/Sid Meier's Civilization 5/MODS/YourCiv BNW Custom Civ",
+  "_mod_data_dir_note": "Only used with --write-mod (to drop the DDS into an existing mod folder and refresh .modinfo MD5s). For a plain run or --check-only it is ignored. Leave/rename freely.",
+  "icon_fit_policy": "contain",
+  "_icon_fit_policy_note": "contain (default) scales each subject to the per-category target above and leaves the intended margin; auto behaves identically; cover (legacy) fills the whole circle and crops overflow (larger than Firaxis stock).",
+  "default_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "_alpha_profile_note": "Use civ5_alpha_glyph_black_to_transparent when the alpha source is a white logo on a BLACK background. If your alpha source is already white-on-transparent, remove this key (the default path forces the symbol white and keeps the existing alpha).",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+  "_leader_scene_profile_note": "civ5_leader_scene_4x3 = 1024x768; civ5_leader_scene_16x9 = 1280x720 for widescreen leader art.",
+  "write_per_asset_previews": true,
+  "civ_icon": "Input/YOURCIV_CUSTOM/YourCiv_CivilizationIcon.png",
+  "leader_icon": "Input/YOURCIV_CUSTOM/YourCiv_LeaderIcon.png",
+  "alpha_icon": "Input/YOURCIV_CUSTOM/YourCiv_AlphaIcon_black.png",
+  "units": [
+    {
+      "label": "UniqueUnitOne",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_UniqueUnitOneIcon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_UNIQUE_UNIT_ONE_YOURCIV_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "UniqueUnitTwo",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_UniqueUnitTwoIcon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_UNIQUE_UNIT_TWO_YOURCIV_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "buildings": [
+    {
+      "label": "UniqueBuildingOne",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_UniqueBuildingOneIcon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_UNIQUE_BUILDING_ONE_YOURCIV_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "UniqueBuildingTwo",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_UniqueBuildingTwoIcon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_UNIQUE_BUILDING_TWO_YOURCIV_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "supports": [
+    {
+      "label": "CivAbility",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_AbilityIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_CIV_ABILITY_YOURCIV_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "UnitOnePromotion",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_UnitOnePromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_UNIT_ONE_YOURCIV_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "flags": [
+    {
+      "label": "UniqueUnitOneFlag",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_UniqueUnitOneFlag.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_UNIQUE_UNIT_ONE_YOURCIV_CUSTOM",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "UniqueUnitTwoFlag",
+      "source": "Input/YOURCIV_CUSTOM/YourCiv_UniqueUnitTwoFlag.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_UNIQUE_UNIT_TWO_YOURCIV_CUSTOM",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "leader_scene": "Input/YOURCIV_CUSTOM/YourCiv_LeaderScene.png",
+  "map_image": "Input/YOURCIV_CUSTOM/YourCiv_Map.png",
+  "dawn_image": "Input/YOURCIV_CUSTOM/YourCiv_DawnOfMan.png",
+  "allow_painted_flags": false,
+  "icon_atlas_name": "YOURCIV_CUSTOM_ICON_ATLAS",
+  "alpha_atlas_name": "YOURCIV_CUSTOM_ALPHA_ATLAS",
+  "flag_atlas_name": "YOURCIV_CUSTOM_UNIT_FLAG_ATLAS",
+  "icon_atlas_stem": "YOURCIV_CUSTOM_IconAtlas",
+  "flag_atlas_stem": "YOURCIV_CUSTOM_UnitFlagAtlas",
+  "dawn_output_name": "YourCiv_DawnOfMan.dds",
+  "map_output_name": "YourCiv_Map512.dds",
+  "leader_scene_output_name": "YourCiv_LeaderScene.dds",
+  "_civ_design_reference": {
+    "_note": [
+      "NOT read by the art pipeline. This documents the civ for the separate SQL/text/.modinfo",
+      "stage so it can reuse the same names. Replacement targets, trait effects, yields, and",
+      "flavors MUST be verified against the vanilla BNW database; anything unmapped belongs in",
+      "UNIMPLEMENTED_EFFECTS.md or a Lua-required note."
+    ],
+    "_mandatory_start_boilerplate_sql": [
+      "Every normal Ancient-era major civ needs its OWN rows in these BNW join tables, or the",
+      "start breaks. These are required boilerplate (not optional):",
+      "  Civilization_FreeUnits          -> UNITCLASS_SETTLER, UNITAI_SETTLE, Count 1  (the starting Settler; omit it and the civ spawns with no Settler)",
+      "  Civilization_FreeBuildingClasses-> BUILDINGCLASS_PALACE                       (first founded city behaves/displays as the capital)",
+      "  Civilization_FreeTechs          -> TECH_AGRICULTURE                            (the standard starting technology)",
+      "Use INSERT (or INSERT OR REPLACE) with the civ's CivilizationType. Custom civs do NOT",
+      "inherit these from the base game just because a Civilizations row exists."
+    ],
+    "internal_prefix": "YOURCIV_CUSTOM",
+    "mod": {
+      "name": "Your Civ (Custom)",
+      "guid_placeholder": "REPLACE-WITH-A-FRESH-GUID-0000-000000000000",
+      "version": 1,
+      "authors": "Your Name Here",
+      "teaser": "Adds Your Civ under Your Leader.",
+      "description": "A custom Brave New World civilization with themed units, buildings, and support/promotion art.",
+      "affects_saved_games": true
+    },
+    "civilization": {
+      "type": "CIVILIZATION_YOURCIV_CUSTOM",
+      "short_description_text": "Your Civ",
+      "description_text": "The Your Civ",
+      "adjective_text": "YourCiv",
+      "region_inspiration_for_city_name_generator": "Describe the culture/region for the city-name generator",
+      "starting_bias_note": "Set start bias only via verified tables (Civilization_Start_Region_Priority / _Avoid / _Along_River / _Along_Ocean)."
+    },
+    "leader": {
+      "type": "LEADER_YOUR_LEADER_YOURCIV_CUSTOM",
+      "name_text": "Your Leader",
+      "flavors_placeholder": {
+        "FLAVOR_OFFENSE": 6,
+        "FLAVOR_DEFENSE": 6,
+        "FLAVOR_EXPANSION": 5,
+        "FLAVOR_GROWTH": 5,
+        "FLAVOR_CULTURE": 5,
+        "FLAVOR_SCIENCE": 5
+      },
+      "_flavor_note": "Use only FlavorTypes that exist in the vanilla DB. Values are 1-10."
+    },
+    "trait": {
+      "type": "TRAIT_YOUR_ABILITY_YOURCIV_CUSTOM",
+      "short_description_text": "Your Unique Ability",
+      "description_text": "PLACEHOLDER trait effect -- verify exact gameplay implementation separately.",
+      "candidate_effects": [
+        {
+          "description": "Describe the intended effect.",
+          "mapping_status": "VERIFY against vanilla BNW tables; otherwise Lua-required or UNIMPLEMENTED_EFFECTS.md."
+        }
+      ]
+    },
+    "unique_units": [
+      {
+        "type": "UNIT_UNIQUE_UNIT_ONE_YOURCIV_CUSTOM",
+        "name_text": "Unique Unit One",
+        "art_label_in_this_config": "UniqueUnitOne",
+        "replaces_unitclass_placeholder": "VERIFY (e.g. UNITCLASS_SPEARMAN)",
+        "free_promotions_placeholder": [
+          "PROMOTION_UNIT_ONE_YOURCIV_CUSTOM"
+        ],
+        "flavors_placeholder": {
+          "FLAVOR_OFFENSE": 8,
+          "FLAVOR_DEFENSE": 8
+        }
+      },
+      {
+        "type": "UNIT_UNIQUE_UNIT_TWO_YOURCIV_CUSTOM",
+        "name_text": "Unique Unit Two",
+        "art_label_in_this_config": "UniqueUnitTwo",
+        "replaces_unitclass_placeholder": "VERIFY (e.g. UNITCLASS_SCOUT)",
+        "free_promotions_placeholder": [],
+        "flavors_placeholder": {
+          "FLAVOR_RECON": 8
+        }
+      }
+    ],
+    "unique_buildings": [
+      {
+        "type": "BUILDING_UNIQUE_BUILDING_ONE_YOURCIV_CUSTOM",
+        "name_text": "Unique Building One",
+        "art_label_in_this_config": "UniqueBuildingOne",
+        "replaces_buildingclass_placeholder": "VERIFY (e.g. BUILDINGCLASS_BARRACKS)",
+        "flavors_placeholder": {
+          "FLAVOR_MILITARY_TRAINING": 8
+        }
+      },
+      {
+        "type": "BUILDING_UNIQUE_BUILDING_TWO_YOURCIV_CUSTOM",
+        "name_text": "Unique Building Two",
+        "art_label_in_this_config": "UniqueBuildingTwo",
+        "replaces_buildingclass_placeholder": "VERIFY (e.g. BUILDINGCLASS_GRANARY)",
+        "flavors_placeholder": {
+          "FLAVOR_GROWTH": 5,
+          "FLAVOR_PRODUCTION": 6
+        }
+      }
+    ],
+    "support_icons": [
+      "PROMOTION_CIV_ABILITY_YOURCIV_CUSTOM",
+      "PROMOTION_UNIT_ONE_YOURCIV_CUSTOM"
+    ],
+    "city_names": [
+      "Capital",
+      "City Two",
+      "City Three",
+      "City Four",
+      "City Five",
+      "City Six",
+      "City Seven",
+      "City Eight",
+      "City Nine",
+      "City Ten",
+      "City Eleven",
+      "City Twelve",
+      "City Thirteen",
+      "City Fourteen",
+      "City Fifteen",
+      "City Sixteen"
+    ],
+    "_city_names_note": "Provide at least 16. The art pipeline ignores this; the SQL stage writes Civilization_CityNames + Language_en_US tags.",
+    "spy_names": [
+      "Spy One",
+      "Spy Two",
+      "Spy Three",
+      "Spy Four",
+      "Spy Five",
+      "Spy Six",
+      "Spy Seven",
+      "Spy Eight",
+      "Spy Nine",
+      "Spy Ten"
+    ],
+    "colors": {
+      "player_color_type": "PLAYERCOLOR_YOURCIV_CUSTOM",
+      "primary_color_type": "COLOR_PLAYER_YOURCIV_CUSTOM_PRIMARY",
+      "secondary_color_type": "COLOR_PLAYER_YOURCIV_CUSTOM_SECONDARY",
+      "_format_note": "Civ V Colors are 0.0-1.0 RGBA floats in the Colors table. Replace with your palette.",
+      "primary_rgba": [
+        0.2,
+        0.2,
+        0.2,
+        1.0
+      ],
+      "secondary_rgba": [
+        0.8,
+        0.8,
+        0.8,
+        1.0
+      ],
+      "text_color_type": "COLOR_PLAYER_YOURCIV_CUSTOM_SECONDARY",
+      "icon_color_type": "COLOR_PLAYER_YOURCIV_CUSTOM_PRIMARY"
+    }
+  }
+}

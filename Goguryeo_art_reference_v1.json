@@ -1,0 +1,145 @@
+{
+  "_notes": [
+    "Reference template for universal_civ5_pipeline.py using the uploaded Goguryeo PNG art pack and the Florence JSON structure.",
+    "Extract Goguryeo_BNW_Custom_Civ_png_Art.zip into C:/Repos/PNGtoDDSConverter/Input/ and place the PNGs in C:/Repos/PNGtoDDSConverter/Input/Goguryeo/.",
+    "Normal and alpha icons use the Spartan/Firaxis footprint: 0.65625 of each cell, so 256px cells get about 168px visible art.",
+    "This pack uses source filenames with _256 and _32 suffixes, so allow_numeric_suffixes is enabled.",
+    "Normal atlas index map: 0 civ, 1 leader, 2 GaemaMusa, 3 MaekBowman, 4 MountainFortress, 5 TaewangStele, 6 GoguryeoDummyBuilding, 7 PreyOnTheWeak, 8 SiegeTactics, 9 IronClad, 10 CityBreaker.",
+    "Confirm type_name values against the Goguryeo mod SQL/XML before using --write-mod; adjust them here if your database Type values differ."
+  ],
+  "prefix": "Goguryeo",
+  "input_dir": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo",
+  "output_dir": "C:/Repos/PNGtoDDSConverter/Output/Goguryeo",
+  "civ_icon": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/Goguryeo_CivilizationIcon_256.png",
+  "leader_icon": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/Gwanggaeto_LeaderIcon_256.png",
+  "alpha_icon": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/Goguryeo_AlphaIcon_256.png",
+  "default_profile": "civ5_circular_icon",
+  "normal_icon_profile": "civ5_circular_icon",
+  "support_icon_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "unit_flag_profile": "civ5_unit_flag_black_to_transparent",
+  "icon_fit_policy": "contain",
+  "write_per_asset_previews": true,
+  "allow_numeric_suffixes": true,
+  "units": [
+    {
+      "label": "GaemaMusa",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/GaemaMusa_Icon_256.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_GOGURYEO_GAEMA_MUSA",
+      "portrait_index": 2,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "MaekBowman",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/MaekBowman_Icon_256.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_GOGURYEO_MAEK_BOWMAN",
+      "portrait_index": 3,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "buildings": [
+    {
+      "label": "MountainFortress",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/MountainFortress_Icon_256.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_GOGURYEO_MOUNTAIN_FORTRESS",
+      "portrait_index": 4,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "TaewangStele",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/TaewangStele_Icon_256.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_GOGURYEO_TAEWANG_STELE",
+      "portrait_index": 5,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "GoguryeoDummyBuilding",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/Goguryeo_DummyBuildingIcon_256.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_GOGURYEO_DUMMY",
+      "portrait_index": 6,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "supports": [
+    {
+      "label": "PreyOnTheWeak",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/PreyOnTheWeak_PromotionIcon_256.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_GOGURYEO_PREY_ON_THE_WEAK",
+      "portrait_index": 7,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "SiegeTactics",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/SiegeTactics_PromotionIcon_256.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_GOGURYEO_SIEGE_TACTICS",
+      "portrait_index": 8,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "IronClad",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/IronClad_PromotionIcon_256.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_GOGURYEO_IRON_CLAD",
+      "portrait_index": 9,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    },
+    {
+      "label": "CityBreaker",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/CityBreaker_PromotionIcon_256.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_GOGURYEO_CITY_BREAKER",
+      "portrait_index": 10,
+      "profile": "civ5_circular_icon",
+      "safe_subject_scale": 0.65625
+    }
+  ],
+  "flags": [
+    {
+      "label": "GaemaMusa",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/GaemaMusa_UnitFlag_32.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_GOGURYEO_GAEMA_MUSA",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "MaekBowman",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/MaekBowman_UnitFlag_32.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_GOGURYEO_MAEK_BOWMAN",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "map_image": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/Map_Goguryeo512.png",
+  "dawn_image": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/DawnOfMan_Goguryeo.png",
+  "leader_scene": "C:/Repos/PNGtoDDSConverter/Input/Goguryeo/Goguryeo_Leader_Scene.png",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+  "icon_atlas_name": "GOGURYEO_ICON_ATLAS",
+  "icon_atlas_stem": "Goguryeo_IconAtlas",
+  "alpha_atlas_name": "GOGURYEO_ALPHA_ATLAS",
+  "flag_atlas_name": "GOGURYEO_UNIT_FLAG_ATLAS",
+  "flag_atlas_stem": "Goguryeo_UnitFlagAtlas",
+  "map_output_name": "Map_Goguryeo512.dds",
+  "dawn_output_name": "DawnOfMan_Goguryeo.dds",
+  "leader_scene_output_name": "Goguryeo_Leader_Scene.dds",
+  "bake_circular_mask": false,
+  "bake_medallions": false,
+  "allow_painted_flags": false,
+  "preset": "existing-combined-atlas",
+  "copy_new_assets": false,
+  "update_modinfo_imports": false
+}

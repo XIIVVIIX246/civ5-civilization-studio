@@ -1,0 +1,60 @@
+{
+  "prefix": "Minoan",
+  "input_dir": "C:/Repos/PNGtoDDSConverter/Input/Minoan",
+  "output_dir": "C:/Repos/PNGtoDDSConverter/Output/Minoan",
+  "mod_data_dir": "C:/Repos/Minoa/The Minoans BNW Custom Civ",
+
+  "civ_icon": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minoan_CivilizationIcon.png",
+  "leader_icon": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minos_LeaderIcon.png",
+  "alpha_icon": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minoan_AlphaIcon_black.png",
+
+  "units": [
+    "KeftiuTraderWarship=C:/Repos/PNGtoDDSConverter/Input/Minoan/KeftiuTraderWarship_Icon.png",
+    "BullLeaper=C:/Repos/PNGtoDDSConverter/Input/Minoan/BullLeaper_Icon.png"
+  ],
+
+  "buildings": [
+    "PalaceOfKnossos=C:/Repos/PNGtoDDSConverter/Input/Minoan/PalaceOfKnossos_Icon.png",
+    "BronzeFoundry=C:/Repos/PNGtoDDSConverter/Input/Minoan/BronzeFoundry_Icon.png"
+  ],
+
+  "supports": [
+    "ThalassocraticEngineering=C:/Repos/PNGtoDDSConverter/Input/Minoan/ThalassocraticEngineering_PromotionIcon.png",
+    "KnossianNavigation=C:/Repos/PNGtoDDSConverter/Input/Minoan/KnossianNavigation_PromotionIcon.png",
+    "BullLeaperPromotion=C:/Repos/PNGtoDDSConverter/Input/Minoan/BullLeaper_PromotionIcon.png",
+    "KeftiuTradeCircuit=C:/Repos/PNGtoDDSConverter/Input/Minoan/KeftiuTradeCircuit_PromotionIcon.png"
+  ],
+
+  "flags": [
+    "KeftiuTraderWarship=C:/Repos/PNGtoDDSConverter/Input/Minoan/KeftiuTraderWarship_UnitFlag_black.png",
+    "BullLeaper=C:/Repos/PNGtoDDSConverter/Input/Minoan/BullLeaper_UnitFlag_black.png"
+  ],
+
+  "map_image": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Map_Minoan512.png",
+  "dawn_image": "C:/Repos/PNGtoDDSConverter/Input/Minoan/DawnOfMan_Minoan.png",
+  "leader_scene": "C:/Repos/PNGtoDDSConverter/Input/Minoan/Minos_Scene.png",
+
+  "icon_atlas_name": "MINOAN_ICON_ATLAS",
+  "alpha_atlas_name": "MINOAN_ALPHA_ATLAS",
+  "flag_atlas_name": "MINOAN_UNIT_FLAG_ATLAS",
+
+  "map_output_name": "Map_Minoan512.dds",
+  "dawn_output_name": "DawnOfMan_Minoan.dds",
+  "leader_scene_output_name": "Minos_Scene.dds",
+
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "unit_flag_profile": "civ5_unit_flag_black_to_transparent",
+  "leader_scene_profile": "civ5_leader_scene_4x3",
+
+  "bake_medallions": true,
+  "medallion_fill_percent": 0.84,
+  "medallion_radius_percent": 0.46,
+  "medallion_rim": true,
+  "medallion_rim_width_percent": 0.035,
+  "medallion_rim_style": "gold",
+  "medallion_background": "transparent",
+  "medallion_preview_only": false,
+
+  "allow_painted_flags": false,
+  "bake_circular_mask": false
+}

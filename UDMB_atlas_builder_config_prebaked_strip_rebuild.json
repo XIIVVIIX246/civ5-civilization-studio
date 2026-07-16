@@ -1,0 +1,186 @@
+{
+  "prefix": "UDMB",
+  "input_dir": "C:/Repos/PNGtoDDSConverter/Input/UDMB",
+  "output_dir": "C:/Repos/PNGtoDDSConverter/Output/UDMB",
+  "icon_atlas_name": "UDMB_ICON_ATLAS",
+  "icon_atlas_stem": "UDMB_IconAtlas",
+  "icons_per_row": 8,
+  "icons_per_column": 8,
+  "atlas_sizes": [
+    256,
+    128,
+    80,
+    64,
+    45,
+    32
+  ],
+  "bake_circular_mask": false,
+  "bake_medallions": true,
+  "medallion_radius_percent": 0.485,
+  "medallion_rim_width_percent": 0.035,
+  "medallion_rim_style": "firaxis_gold",
+  "medallion_background_mode": "firaxis_dark",
+  "default_safe_subject_scale": 0.76,
+  "building_safe_subject_scale": 0.72,
+  "promotion_safe_subject_scale": 0.78,
+  "icons": [
+    {
+      "label": "WatchPost",
+      "type_name": "BUILDING_UDMB_WATCH_POST",
+      "table": "Buildings",
+      "portrait_index": 0,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_WatchPost_Icon.png"
+    },
+    {
+      "label": "PalisadeWall",
+      "type_name": "BUILDING_UDMB_PALISADE_WALL",
+      "table": "Buildings",
+      "portrait_index": 1,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_PalisadeWall_Icon.png"
+    },
+    {
+      "label": "Gatehouse",
+      "type_name": "BUILDING_UDMB_GATEHOUSE",
+      "table": "Buildings",
+      "portrait_index": 2,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_Gatehouse_Icon.png"
+    },
+    {
+      "label": "RavelinWorks",
+      "type_name": "BUILDING_UDMB_RAVELIN_WORKS",
+      "table": "Buildings",
+      "portrait_index": 3,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_RavelinWorks_Icon.png"
+    },
+    {
+      "label": "FortifiedArsenal",
+      "type_name": "BUILDING_UDMB_FORTIFIED_ARSENAL",
+      "table": "Buildings",
+      "portrait_index": 4,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_FortifiedArsenal_Icon.png"
+    },
+    {
+      "label": "CivilDefenseNetwork",
+      "type_name": "BUILDING_UDMB_CIVIL_DEFENSE_NETWORK",
+      "table": "Buildings",
+      "portrait_index": 5,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_CivilDefenseNetwork_Icon.png"
+    },
+    {
+      "label": "AirDefenseCommand",
+      "type_name": "BUILDING_UDMB_AIR_DEFENSE_COMMAND",
+      "table": "Buildings",
+      "portrait_index": 6,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_AirDefenseCommand_Icon.png"
+    },
+    {
+      "label": "IntegratedDefenseGrid",
+      "type_name": "BUILDING_UDMB_INTEGRATED_DEFENSE_GRID",
+      "table": "Buildings",
+      "portrait_index": 7,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_IntegratedDefenseGrid_Icon.png"
+    },
+    {
+      "label": "TrainingYard",
+      "type_name": "BUILDING_UDMB_TRAINING_YARD",
+      "table": "Buildings",
+      "portrait_index": 8,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_TrainingYard_Icon.png"
+    },
+    {
+      "label": "DrillGround",
+      "type_name": "BUILDING_UDMB_DRILL_GROUND",
+      "table": "Buildings",
+      "portrait_index": 9,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_DrillGround_Icon.png"
+    },
+    {
+      "label": "MusteringHall",
+      "type_name": "BUILDING_UDMB_MUSTERING_HALL",
+      "table": "Buildings",
+      "portrait_index": 10,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_MusteringHall_Icon.png"
+    },
+    {
+      "label": "ScholaMilitum",
+      "type_name": "BUILDING_UDMB_SCHOLA_MILITUM",
+      "table": "Buildings",
+      "portrait_index": 11,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_ScholaMilitum_Icon.png"
+    },
+    {
+      "label": "Kriegsakademie",
+      "type_name": "BUILDING_UDMB_KRIEGSAKADEMIE",
+      "table": "Buildings",
+      "portrait_index": 12,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_Kriegsakademie_Icon.png"
+    },
+    {
+      "label": "MobilizationCenter",
+      "type_name": "BUILDING_UDMB_MOBILIZATION_CENTER",
+      "table": "Buildings",
+      "portrait_index": 13,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_MobilizationCenter_Icon.png"
+    },
+    {
+      "label": "CombinedArmsHeadquarters",
+      "type_name": "BUILDING_UDMB_COMBINED_ARMS_HQ",
+      "table": "Buildings",
+      "portrait_index": 14,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_CombinedArmsHeadquarters_Icon.png"
+    },
+    {
+      "label": "StrategicOperationsCenter",
+      "type_name": "BUILDING_UDMB_STRATEGIC_OPERATIONS_CENTER",
+      "table": "Buildings",
+      "portrait_index": 15,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_StrategicOperationsCenter_Icon.png"
+    },
+    {
+      "label": "InfantryDoctrine",
+      "type_name": "PROMOTION_UDMB_INFANTRY_DOCTRINE",
+      "table": "UnitPromotions",
+      "portrait_index": 16,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_InfantryDoctrine_PromotionIcon.png"
+    },
+    {
+      "label": "ArmorDoctrine",
+      "type_name": "PROMOTION_UDMB_ARMOR_DOCTRINE",
+      "table": "UnitPromotions",
+      "portrait_index": 17,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_ArmorDoctrine_PromotionIcon.png"
+    },
+    {
+      "label": "FireDisciplineReserved",
+      "type_name": "RESERVED_SLOT_18",
+      "table": "Reserved",
+      "portrait_index": 18,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_FireDiscipline_PromotionIcon.png"
+    },
+    {
+      "label": "SiegeDoctrine",
+      "type_name": "PROMOTION_UDMB_SIEGE_DOCTRINE",
+      "table": "UnitPromotions",
+      "portrait_index": 19,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_SiegeLogistics_PromotionIcon.png"
+    },
+    {
+      "label": "AirDoctrine",
+      "type_name": "PROMOTION_UDMB_AIR_DOCTRINE",
+      "table": "UnitPromotions",
+      "portrait_index": 20,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_AirCoordination_PromotionIcon.png"
+    },
+    {
+      "label": "OperationalReadiness",
+      "type_name": "PROMOTION_UDMB_OPERATIONAL_READINESS",
+      "table": "UnitPromotions",
+      "portrait_index": 21,
+      "source": "C:/Repos/PNGtoDDSConverter/Input/UDMB/UDMB_OperationalReadiness_PromotionIcon.png"
+    }
+  ],
+  "mod_data_dir": "C:/Users/ExampleUser/Documents/My Games/Sid Meier's Civilization 5/MODS/Universal Defensive Military Buildings",
+  "source_has_prebaked_medallion": true,
+  "strip_prebaked_medallion": true,
+  "prebaked_inner_art_radius_percent": 0.9
+}

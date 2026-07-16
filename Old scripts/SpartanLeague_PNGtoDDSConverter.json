@@ -1,0 +1,103 @@
+{
+  "prefix": "SpartanLeague",
+  "input_dir": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague",
+  "output_dir": "C:/Repos/PNGtoDDSConverter/Output/SpartanLeague",
+  "preset": "no-mod-integration",
+  "civ_icon": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/SpartanLeague_CivilizationIcon.png",
+  "leader_icon": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/Leonidas_LeaderIcon.png",
+  "alpha_icon": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/SpartanLeague_AlphaIcon_black.png",
+  "units": [
+    {
+      "label": "HomoioiHoplite",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/HomoioiHoplite_Icon.png",
+      "asset_type": "unit_icon",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "KrypteiaScout",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/KrypteiaScout_Icon.png",
+      "asset_type": "unit_icon",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "buildings": [
+    {
+      "label": "SpartanAgogeAssembly",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/SpartanAgogeAssembly_Icon.png",
+      "asset_type": "building_icon",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "HelotQuarter",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/HelotQuarter_Icon.png",
+      "asset_type": "building_icon",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "supports": [
+    {
+      "label": "GreatPhalanxDiscipline",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/GreatPhalanxDiscipline_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "HomoioiShieldWall",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/HomoioiShieldWall_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "KrypteiaStealthExecution",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/KrypteiaStealthExecution_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "HelotWarLabor",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/HelotWarLabor_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "flags": [
+    {
+      "label": "HomoioiHoplite",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/HomoioiHoplite_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "KrypteiaScout",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/KrypteiaScout_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "map_image": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/Map_SpartanLeague512.png",
+  "dawn_image": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/DawnOfMan_SpartanLeague.png",
+  "leader_scene": "C:/Repos/PNGtoDDSConverter/Input/SpartanLeague/Leonidas_Scene.png",
+  "icon_atlas_name": "SPARTAN_LEAGUE_ICON_ATLAS",
+  "alpha_atlas_name": "SPARTAN_LEAGUE_ALPHA_ATLAS",
+  "flag_atlas_name": "SPARTAN_LEAGUE_UNIT_FLAG_ATLAS",
+  "map_output_name": "Map_SpartanLeague512.dds",
+  "dawn_output_name": "DawnOfMan_SpartanLeague.dds",
+  "leader_scene_output_name": "Leonidas_Scene.dds",
+  "normal_icon_profile": "civ5_circular_icon",
+  "support_icon_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "unit_flag_profile": "civ5_unit_flag_black_to_transparent",
+  "leader_scene_profile": "civ5_leader_scene_16x9",
+  "write_per_asset_previews": true,
+  "bake_medallions": true,
+  "medallion_fill_percent": 0.94,
+  "medallion_radius_percent": 0.495,
+  "medallion_rim": true,
+  "medallion_rim_width_percent": 0.02,
+  "medallion_rim_style": "gold",
+  "medallion_background": "transparent",
+  "medallion_preview_only": false,
+  "allow_painted_flags": false,
+  "bake_circular_mask": false,
+  "allow_numeric_suffixes": false
+}

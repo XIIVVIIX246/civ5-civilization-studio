@@ -1,0 +1,16 @@
+1bfa0ba9-8100-4ee0-ad69-4a39d4dbcc8a.png -> MoundsOfTheSun_PromotionIcon.png
+24ecc9fd-2c9e-4887-857c-94534b86747a.png -> RiverRaider_Icon.png
+7085429a-b35e-4450-b0bf-92c00a3b5b06.png -> PlatformMound_Icon.png
+ChatGPT Image Jun 8, 2026, 10_44_27 AM (1).png -> MaizeFloodplain_PromotionIcon.png
+ChatGPT Image Jun 8, 2026, 10_44_27 AM (2).png -> PalisadeVillage_Icon.png
+ChatGPT Image Jun 8, 2026, 10_44_27 AM (3).png -> SacredCopper_PromotionIcon.png
+ChatGPT Image Jun 8, 2026, 10_44_27 AM (4).png -> Mississippian_AlphaIcon_black.png
+ChatGPT Image Jun 8, 2026, 10_44_27 AM (5).png -> ChunkeyWarrior_UnitFlag_black.png
+ChatGPT Image Jun 8, 2026, 10_44_27 AM (6).png -> RiverRaider_UnitFlag_black.png
+ChatGPT Image Jun 8, 2026, 10_44_27 AM (7).png -> DawnOfMan_Mississippian.png
+Leader_Scene.png -> GreatSun_Scene.png
+ae55c735-323c-4939-a9c3-76a0a213bc00.png -> RiverTrade_PromotionIcon.png
+cd8b4bf8-04ab-4e52-98fc-4d7512468b9e.png -> ChunkeyWarrior_Icon.png
+e407e559-f29e-447c-ad84-e98f7b90e799.png -> GreatSun_LeaderIcon.png
+f6a4e9c5-2dbf-4338-8672-a137f72a679f.png -> CahokiaPlaza_Icon.png
+fced0400-60fc-413f-8e9b-5c9b30baf1a5.png -> Mississippian_CivilizationIcon.png

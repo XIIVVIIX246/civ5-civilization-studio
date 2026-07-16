@@ -1,0 +1,327 @@
+{
+  "_about": [
+    "Config for universal_civ5_pipeline.py — the ART / DDS stage of a Civilization V",
+    "Brave New World custom-civ build for the Mississippian civilization.",
+    "This script builds the icon atlases, alpha/team icons, unit flags, Dawn of Man image,",
+    "map image, and leader scene, then writes IconTextureAtlas XML, a DDS manifest, a QA",
+    "report, and per-asset previews.",
+    "",
+    "It does NOT generate Civilization.sql / Leader.sql / Trait.sql / Text.sql / Colors.sql",
+    "/ the .modinfo, etc. Those gameplay tables belong to the separate SQL/text/.modinfo",
+    "stage of the builder. The full intended civ is documented for that stage under the",
+    "_civ_design_reference key below, which this art pipeline ignores.",
+    "",
+    "JSON has no comment syntax, so all explanatory text lives in _-prefixed keys that the",
+    "pipeline does not read.",
+    "",
+    "Paths are relative to the directory you run the script from. Put the attached Mississippian",
+    "PNG files at the listed Input/MISSISSIPPIAN_CUSTOM/ paths. Filenames must NOT carry trailing numeric suffixes",
+    "like _1 or _256.",
+    "",
+    "Run:",
+    "  python universal_civ5_pipeline.py --config MISSISSIPPIAN_CUSTOM.dds.json --check-only",
+    "  python universal_civ5_pipeline.py --config MISSISSIPPIAN_CUSTOM.dds.json",
+    "",
+    "Atlas layout produced by this build (fixed in code, not set here):",
+    "  Normal icon atlas: 4x4 grid (16 cells); sizes 256,128,80,64,45,32 (256 atlas = 1024x1024).",
+    "  Unit flag atlas:   8x8 grid, 32px cells (256x256).",
+    "  Leader scene:      1280x720 because this source scene is widescreen.",
+    "  Dawn of Man:       1024x768.",
+    "The IconTextureAtlas XML it emits already matches this 4x4 / 16-cell layout."
+  ],
+  "_source_art_naming": [
+    "Civilization icon    -> civ_icon                 -> Mississippian_CivilizationIcon.png",
+    "Civilization alpha   -> alpha_icon               -> Mississippian_AlphaIcon_black.png",
+    "Leader icon          -> leader_icon              -> GreatSun_LeaderIcon.png",
+    "Unique unit icon     -> units[].source           -> ChunkeyWarrior_Icon.png / RiverRaider_Icon.png",
+    "Unique unit flag     -> flags[].source           -> ChunkeyWarrior_UnitFlag_black.png / RiverRaider_UnitFlag_black.png",
+    "Unique building icon -> buildings[].source       -> CahokiaPlaza_Icon.png / PlatformMound_Icon.png",
+    "Support/promotion    -> supports[].source        -> ChunkeyDefense_PromotionIcon.png / MoundsOfTheSun_PromotionIcon.png / RiverRaider_PromotionIcon.png",
+    "Leader scene         -> leader_scene             -> GreatSun_Scene.png",
+    "Dawn of Man image    -> dawn_image               -> DawnOfMan_Mississippian.png",
+    "Map image            -> map_image                -> Map_Mississippian512.png"
+  ],
+  "prefix": "MISSISSIPPIAN_CUSTOM",
+  "output_dir": "Output/MISSISSIPPIAN_CUSTOM",
+  "preset": "no-mod-integration",
+  "icon_fit_policy": "auto",
+  "_icon_fit_policy_note": "auto = cover full-bleed/disc/photo art to fill the circle, contain glyph art at vanilla occupancy. Use 'contain' to force strict occupancy for everything, 'cover' to always fill.",
+  "default_profile": "civ5_circular_icon",
+  "alpha_profile": "civ5_alpha_glyph_black_to_transparent",
+  "leader_scene_profile": "civ5_leader_scene_16x9",
+  "write_per_asset_previews": true,
+  "civ_icon": "Input/MISSISSIPPIAN_CUSTOM/Mississippian_CivilizationIcon.png",
+  "leader_icon": "Input/MISSISSIPPIAN_CUSTOM/GreatSun_LeaderIcon.png",
+  "alpha_icon": "Input/MISSISSIPPIAN_CUSTOM/Mississippian_AlphaIcon_black.png",
+  "units": [
+    {
+      "label": "ChunkeyWarrior",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/ChunkeyWarrior_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_CHUNKEY_WARRIOR_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "RiverRaider",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/RiverRaider_Icon.png",
+      "asset_type": "unit_icon",
+      "type_name": "UNIT_RIVER_RAIDER_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "buildings": [
+    {
+      "label": "CahokiaPlaza",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/CahokiaPlaza_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_CAHOKIA_PLAZA_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "PlatformMound",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/PlatformMound_Icon.png",
+      "asset_type": "building_icon",
+      "type_name": "BUILDING_PLATFORM_MOUND_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "supports": [
+    {
+      "label": "ChunkeyDefense",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/ChunkeyDefense_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_CHUNKEY_DEFENSE_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "MoundsOfTheSun",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/MoundsOfTheSun_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_MOUNDS_OF_THE_SUN_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_circular_icon"
+    },
+    {
+      "label": "RiverRaiderPromotion",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/RiverRaider_PromotionIcon.png",
+      "asset_type": "support_icon",
+      "type_name": "PROMOTION_RIVER_RAIDER_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_circular_icon"
+    }
+  ],
+  "flags": [
+    {
+      "label": "ChunkeyWarriorFlag",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/ChunkeyWarrior_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_CHUNKEY_WARRIOR_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    },
+    {
+      "label": "RiverRaiderFlag",
+      "source": "Input/MISSISSIPPIAN_CUSTOM/RiverRaider_UnitFlag_black.png",
+      "asset_type": "unit_flag",
+      "type_name": "UNIT_RIVER_RAIDER_MISSISSIPPIAN_CUSTOM",
+      "profile": "civ5_unit_flag_black_to_transparent"
+    }
+  ],
+  "leader_scene": "Input/MISSISSIPPIAN_CUSTOM/GreatSun_Scene.png",
+  "map_image": "Input/MISSISSIPPIAN_CUSTOM/Map_Mississippian512.png",
+  "dawn_image": "Input/MISSISSIPPIAN_CUSTOM/DawnOfMan_Mississippian.png",
+  "_civ_design_reference": {
+    "_note": [
+      "NOT read by the art pipeline. This documents the Mississippian art set so the",
+      "separate SQL/text/.modinfo stage can consume the same names. Replacement targets,",
+      "trait effects, yields, flavors, and gameplay SQL MUST be verified against the",
+      "vanilla BNW database before implementation. Anything unmapped belongs in",
+      "UNIMPLEMENTED_EFFECTS.md or Lua-required notes."
+    ],
+    "internal_prefix": "MISSISSIPPIAN_CUSTOM",
+    "mod": {
+      "name": "Mississippian Civilization (Custom)",
+      "guid_placeholder": "REPLACE-WITH-A-FRESH-GUID-0000-000000000000",
+      "version": 1,
+      "authors": "Your Name Here",
+      "teaser": "Adds the Mississippian civilization under the Great Sun.",
+      "description": "A custom Brave New World civilization: the Mississippian civilization, led by the Great Sun, with Mississippian-themed units, buildings, and support/promotion art.",
+      "affects_saved_games": true
+    },
+    "civilization": {
+      "type": "CIVILIZATION_MISSISSIPPIAN_CUSTOM",
+      "short_description_text": "Mississippian",
+      "description_text": "Mississippian Civilization",
+      "adjective_text": "Mississippian",
+      "region_inspiration_for_city_name_generator": "Mississippian / Eastern Woodlands",
+      "starting_bias_note": "Set CivilizationType start bias only if supported by the verified DB schema."
+    },
+    "leader": {
+      "type": "LEADER_GREAT_SUN_MISSISSIPPIAN_CUSTOM",
+      "name_text": "Great Sun",
+      "flavors_placeholder": {
+        "FLAVOR_EXPANSION": 7,
+        "FLAVOR_GROWTH": 6,
+        "FLAVOR_CULTURE": 6,
+        "FLAVOR_RELIGION": 5,
+        "FLAVOR_DEFENSE": 6,
+        "FLAVOR_OFFENSE": 5
+      },
+      "_flavor_note": "Use only FlavorTypes that exist in the vanilla DB. Values are placeholders 1-10."
+    },
+    "trait": {
+      "type": "TRAIT_MOUNDS_OF_THE_SUN_MISSISSIPPIAN_CUSTOM",
+      "short_description_text": "Mounds of the Sun",
+      "description_text": "PLACEHOLDER trait effect — map to verified Trait columns or Lua-required implementation later.",
+      "candidate_effects": [
+        {
+          "description": "Placeholder: bonuses connected to mounds, river settlement, or ceremonial centers.",
+          "mapping_status": "VERIFY — art config cannot validate gameplay tables."
+        }
+      ]
+    },
+    "unique_units": [
+      {
+        "type": "UNIT_CHUNKEY_WARRIOR_MISSISSIPPIAN_CUSTOM",
+        "name_text": "Chunkey Warrior",
+        "art_label_in_this_config": "ChunkeyWarrior",
+        "replaces_unit_placeholder": "VERIFY_UNIT_CLASS_TARGET",
+        "_replacement_note": "Confirm the exact UnitType and UnitClass in the vanilla BNW DB before generating SQL.",
+        "free_promotions_placeholder": [
+          "PROMOTION_CHUNKEY_DEFENSE_MISSISSIPPIAN_CUSTOM"
+        ],
+        "flavors_placeholder": {
+          "FLAVOR_OFFENSE": 6,
+          "FLAVOR_DEFENSE": 5
+        }
+      },
+      {
+        "type": "UNIT_RIVER_RAIDER_MISSISSIPPIAN_CUSTOM",
+        "name_text": "River Raider",
+        "art_label_in_this_config": "RiverRaider",
+        "replaces_unit_placeholder": "VERIFY_UNIT_CLASS_TARGET",
+        "_replacement_note": "Confirm the exact UnitType and UnitClass in the vanilla BNW DB before generating SQL.",
+        "free_promotions_placeholder": [
+          "PROMOTION_RIVER_RAIDER_MISSISSIPPIAN_CUSTOM"
+        ],
+        "flavors_placeholder": {
+          "FLAVOR_NAVAL": 6,
+          "FLAVOR_OFFENSE": 6
+        }
+      }
+    ],
+    "unique_buildings": [
+      {
+        "type": "BUILDING_CAHOKIA_PLAZA_MISSISSIPPIAN_CUSTOM",
+        "name_text": "Cahokia Plaza",
+        "art_label_in_this_config": "CahokiaPlaza",
+        "replaces_building_placeholder": "VERIFY_BUILDING_CLASS_TARGET",
+        "_replacement_note": "Confirm the exact BuildingType and BuildingClass in the vanilla BNW DB before generating SQL.",
+        "yield_changes_placeholder": [
+          {
+            "YieldType": "YIELD_CULTURE",
+            "Yield": 0,
+            "_note": "Placeholder; set verified yields only."
+          }
+        ],
+        "flavors_placeholder": {
+          "FLAVOR_CULTURE": 7,
+          "FLAVOR_GROWTH": 4
+        }
+      },
+      {
+        "type": "BUILDING_PLATFORM_MOUND_MISSISSIPPIAN_CUSTOM",
+        "name_text": "Platform Mound",
+        "art_label_in_this_config": "PlatformMound",
+        "replaces_building_placeholder": "VERIFY_BUILDING_CLASS_TARGET",
+        "_replacement_note": "Confirm the exact BuildingType and BuildingClass in the vanilla BNW DB before generating SQL.",
+        "yield_changes_placeholder": [
+          {
+            "YieldType": "YIELD_FAITH",
+            "Yield": 0,
+            "_note": "Placeholder; set verified yields only."
+          }
+        ],
+        "flavors_placeholder": {
+          "FLAVOR_RELIGION": 6,
+          "FLAVOR_CULTURE": 5
+        }
+      }
+    ],
+    "support_or_promotion_icons": [
+      {
+        "type": "PROMOTION_CHUNKEY_DEFENSE_MISSISSIPPIAN_CUSTOM",
+        "name_text": "Chunkey Defense",
+        "art_label_in_this_config": "ChunkeyDefense"
+      },
+      {
+        "type": "PROMOTION_MOUNDS_OF_THE_SUN_MISSISSIPPIAN_CUSTOM",
+        "name_text": "Mounds of the Sun",
+        "art_label_in_this_config": "MoundsOfTheSun"
+      },
+      {
+        "type": "PROMOTION_RIVER_RAIDER_MISSISSIPPIAN_CUSTOM",
+        "name_text": "River Raider",
+        "art_label_in_this_config": "RiverRaiderPromotion"
+      }
+    ],
+    "city_names": [
+      "Cahokia",
+      "Moundville",
+      "Etowah",
+      "Spiro",
+      "Kincaid",
+      "Angel Mounds",
+      "Wickliffe",
+      "Emerald Mound",
+      "Shiloh",
+      "Parkin",
+      "Nodena",
+      "Bottle Creek",
+      "Ocmulgee",
+      "Kolomoki",
+      "Towosahgy",
+      "Winterville"
+    ],
+    "_city_names_note": "16 placeholder site/city names; review and edit before gameplay release.",
+    "spy_names": [
+      "Chunkey",
+      "Red Horn",
+      "Falcon",
+      "Black Drink",
+      "Cedar",
+      "Copper Plate",
+      "Shell Gorget",
+      "Sun Circle",
+      "River Reed",
+      "Mound Watcher"
+    ],
+    "_spy_names_note": "10 placeholder names/titles; review and edit before gameplay release.",
+    "colors": {
+      "player_color_type": "PLAYERCOLOR_MISSISSIPPIAN_CUSTOM",
+      "primary_color_type": "COLOR_PLAYER_MISSISSIPPIAN_CUSTOM_PRIMARY",
+      "secondary_color_type": "COLOR_PLAYER_MISSISSIPPIAN_CUSTOM_SECONDARY",
+      "_format_note": "Civ V Colors are stored as 0.0-1.0 RGBA floats in the Colors table. Values below are placeholders chosen to match the source art palette.",
+      "primary_rgba": [
+        0.48,
+        0.16,
+        0.08,
+        1.0
+      ],
+      "secondary_rgba": [
+        0.93,
+        0.72,
+        0.34,
+        1.0
+      ],
+      "text_color_type": "COLOR_PLAYER_MISSISSIPPIAN_CUSTOM_SECONDARY",
+      "icon_color_type": "COLOR_PLAYER_MISSISSIPPIAN_CUSTOM_PRIMARY"
+    }
+  },
+  "allow_painted_flags": false,
+  "icon_atlas_name": "MISSISSIPPIAN_CUSTOM_ICON_ATLAS",
+  "alpha_atlas_name": "MISSISSIPPIAN_CUSTOM_ALPHA_ATLAS",
+  "flag_atlas_name": "MISSISSIPPIAN_CUSTOM_UNIT_FLAG_ATLAS",
+  "icon_atlas_stem": "MISSISSIPPIAN_CUSTOM_IconAtlas",
+  "flag_atlas_stem": "MISSISSIPPIAN_CUSTOM_UnitFlagAtlas",
+  "dawn_output_name": "DawnOfMan_Mississippian.dds",
+  "map_output_name": "Map_Mississippian512.dds",
+  "leader_scene_output_name": "GreatSun_Scene.dds"
+}

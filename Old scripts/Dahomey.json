@@ -1,0 +1,82 @@
+{
+  "prefix": "Dahomey",
+  "input_dir": "C:/Repos/PNGtoDDSConverter/Input/Dahomey",
+  "output_dir": "C:/Repos/PNGtoDDSConverter/Output/Dahomey",
+  "mod_data_dir": "C:/Users/ExampleUser/Documents/My Games/Sid Meier's Civilization 5/MODS/Dahomey_BNW_Custom_Civ",
+  "civ_icon": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/Dahomey_CivilizationIcon.png",
+  "leader_icon": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/Guezo_LeaderIcon.png",
+  "alpha_icon": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/Dahomey_AlphaIcon.png",
+  "units": [
+    {
+      "label": "DahomeyAmazon",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/DahomeyAmazon_Icon.png"
+    },
+    {
+      "label": "AgbaraWarrior",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/AgbaraWarrior_Icon.png"
+    }
+  ],
+  "buildings": [
+    {
+      "label": "RoyalCompound",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/RoyalCompound_Icon.png"
+    },
+    {
+      "label": "PalmOilPress",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/PalmOilPress_Icon.png"
+    }
+  ],
+  "supports": [
+    {
+      "label": "Fearless",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/Fearless_PromotionIcon.png"
+    },
+    {
+      "label": "FirstBlood",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/FirstBlood_PromotionIcon.png"
+    },
+    {
+      "label": "TrophyTaker",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/TrophyTaker_PromotionIcon.png"
+    },
+    {
+      "label": "WealthPalmSword",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/WealthPalmSword_TraitIcon.png"
+    },
+    {
+      "label": "DahomeyDummyBuilding",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/Dahomey_DummyBuildingIcon.png"
+    }
+  ],
+  "flags": [
+    {
+      "label": "DahomeyAmazon",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/DahomeyAmazon_UnitFlag.png"
+    },
+    {
+      "label": "AgbaraWarrior",
+      "source": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/AgbaraWarrior_UnitFlag.png"
+    }
+  ],
+  "map_image": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/Map_Dahomey.png",
+  "dawn_image": "C:/Repos/PNGtoDDSConverter/Input/Dahomey/DawnOfMan_Dahomey.png",
+  "icon_atlas_name": "DAHOMEY_ICON_ATLAS",
+  "alpha_atlas_name": "DAHOMEY_ALPHA_ATLAS",
+  "flag_atlas_name": "DAHOMEY_UNIT_FLAG_ATLAS",
+  "flag_atlas_stem": "DahomeyUnitFlags",
+  "map_output_name": "Map_Dahomey512.dds",
+  "dawn_output_name": "DawnOfMan_Dahomey.dds",
+  "default_profile": "civ5_circular_icon",
+  "write_per_asset_previews": true,
+  "bake_medallions": true,
+  "medallion_fill_percent": 0.94,
+  "medallion_radius_percent": 0.495,
+  "medallion_rim": true,
+  "medallion_rim_width_percent": 0.02,
+  "medallion_rim_style": "gold",
+  "medallion_background": "transparent",
+  "medallion_preview_only": false,
+  "allow_painted_flags": false,
+  "bake_circular_mask": false,
+  "preset": "existing-combined-atlas"
+}
