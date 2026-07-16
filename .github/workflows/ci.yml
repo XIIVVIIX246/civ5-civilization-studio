@@ -114,7 +114,7 @@ jobs:
       contents: write
     steps:
       - name: Download validated Windows artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: civ5-civilization-studio-windows
           path: artifact
