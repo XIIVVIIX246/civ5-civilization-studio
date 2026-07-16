@@ -132,6 +132,7 @@ jobs:
             exit 1
           fi
           gh release create "$GITHUB_REF_NAME" "${files[@]}" \
+            --repo "$GITHUB_REPOSITORY" \
             --verify-tag \
             --draft \
             --generate-notes \
