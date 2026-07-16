@@ -29,10 +29,13 @@ jobs:
           }
       - name: Compile Python sources
         run: python -m compileall -q src tools
+      - name: Create short Windows test root
+        shell: powershell
+        run: New-Item -ItemType Directory -Force -Path D:\t | Out-Null
       - name: Run static and integration tests
         env:
           QT_QPA_PLATFORM: offscreen
-        run: python -m pytest -q
+        run: python -m pytest -q --basetemp D:\t\pytest
       - name: Verify clean patch formatting
         run: git diff --check
 
