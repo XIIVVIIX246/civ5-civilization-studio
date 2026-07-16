@@ -12,8 +12,8 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -44,8 +44,8 @@ jobs:
     needs: test
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -102,7 +102,7 @@ jobs:
             }
           }
       - name: Upload executable, installer, deterministic ZIP, manifest, and SHA-256
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: civ5-civilization-studio-windows
           path: |
@@ -117,7 +117,7 @@ jobs:
       contents: write
     steps:
       - name: Download validated Windows artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: civ5-civilization-studio-windows
           path: artifact
